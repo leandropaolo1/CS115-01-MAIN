@@ -1,7 +1,12 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Sundae Subclass Test using Junit
+ * Lesson Learned: Learned to test a subclass with Junit
  * Class: 115-01
  * Date: 22-JAN-2023
+ * AssignmentL 3a
+ * 
  */
 package tests;
 
@@ -100,5 +105,18 @@ public class SundaeTest {
         sundae.setToppingPrice(0.50);
         Assert.assertEquals(0.50, sundae.getToppingPrice(),0.1);
     }
+
+    @Test
+    public void testSetToppingPriceNegative() {
+        Sundae sundae = new Sundae(
+                "Chocolate Sundae",
+                1,
+                3.50,
+                "Chocolate Syrup",
+                0);
+        sundae.setToppingPrice(-1);
+        Assert.assertNotEquals(-1, sundae.getToppingPrice(),0.1);
+    }
+
 
 }

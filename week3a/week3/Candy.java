@@ -1,7 +1,12 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Candy Subclass that extendends from DessertItem
+ * Lesson Learned: Learned to create a subclass
  * Class: 115-01
  * Date: 22-JAN-2023
+ * AssignmentL 3a
+ * 
  */
 
 package week3;

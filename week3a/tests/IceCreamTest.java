@@ -1,7 +1,12 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: IceCream Subclass Test using Junit
+ * Lesson Learned: Learned to test a subclass with Junit
  * Class: 115-01
  * Date: 22-JAN-2023
+ * AssignmentL 3a
+ * 
  */
 package tests;
 
@@ -34,13 +39,13 @@ public class IceCreamTest {
 
     @Test
     public void testConstructorWithArguments() {
-        IceCream iceCream = new IceCream("Chocolate", 1,1.0);
+        IceCream iceCream = new IceCream("Chocolate", 1, 1.0);
         assertIceCream(
                 "Chocolate",
                 1,
                 1.0,
                 iceCream);
-    } 
+    }
 
     @Test
     public void testGetScoopCount() {
@@ -48,7 +53,7 @@ public class IceCreamTest {
                 "Chocolate IceCream",
                 1,
                 3.50);
-        Assert.assertEquals(1, IceCream.getScoopCount(),0.1);
+        Assert.assertEquals(1, IceCream.getScoopCount(), 0.1);
     }
 
     @Test
@@ -58,16 +63,16 @@ public class IceCreamTest {
                 0,
                 3.50);
         IceCream.setScoopCount(1);
-        Assert.assertEquals(1, IceCream.getScoopCount(),0.1);
+        Assert.assertEquals(1, IceCream.getScoopCount(), 0.1);
     }
-    
+
     @Test
     public void testGetPricePerScoop() {
         IceCream IceCream = new IceCream(
                 "Chocolate IceCream",
                 1,
                 3.50);
-        Assert.assertEquals(3.50, IceCream.getPricePerScoop(),0.1);
+        Assert.assertEquals(3.50, IceCream.getPricePerScoop(), 0.1);
     }
 
     @Test
@@ -77,6 +82,26 @@ public class IceCreamTest {
                 1,
                 0);
         IceCream.setPricePerScoop(0.50);
-        Assert.assertEquals(0.50, IceCream.getPricePerScoop(),0.1);
+        Assert.assertEquals(0.50, IceCream.getPricePerScoop(), 0.1);
+    }
+
+    @Test
+    public void testSetPricePerScoopNegative() {
+        IceCream IceCream = new IceCream(
+                "Chocolate IceCream",
+                1,
+                0);
+        IceCream.setPricePerScoop(-1);
+        Assert.assertNotEquals(-1, IceCream.getPricePerScoop(), 0.1);
+    }
+
+    @Test
+    public void testSetScoopCountNegative() {
+        IceCream IceCream = new IceCream(
+                "Chocolate IceCream",
+                1,
+                0);
+        IceCream.setScoopCount(-1);
+        Assert.assertNotEquals(-1, IceCream.getPricePerScoop(), 0.1);
     }
 }

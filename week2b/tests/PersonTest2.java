@@ -1,3 +1,13 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Person Test using Junit
+ * Lesson Learned: Learned to test a superclass with Junit
+ * Class: 115-01
+ * Date: 22-JAN-2023
+ * 
+ */
+
 package tests;
 import week2b.Person;
 import java.time.LocalDate;

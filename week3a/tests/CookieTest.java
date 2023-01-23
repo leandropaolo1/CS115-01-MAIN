@@ -1,7 +1,12 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Cookie Subclass Test using Junit
+ * Lesson Learned: Learned to test a subclass with Junit
  * Class: 115-01
  * Date: 22-JAN-2023
+ * AssignmentL 3a
+ * 
  */
 package tests;
 
@@ -52,7 +57,7 @@ public class CookieTest {
     }
 
     @Test
-    public void testSetScoopCount() {
+    public void testSetQuantity() {
         Cookie Cookie = new Cookie(
                 "Chocolate Cookie",
                 0,
@@ -78,5 +83,25 @@ public class CookieTest {
                 0);
         Cookie.setPricePerDozen(0.50);
         Assert.assertEquals(0.50, Cookie.getPricePerDozen(),0.1);
+    }
+
+    @Test
+    public void testPricePerPoundDozenNegative() {
+        Cookie Cookie = new Cookie(
+                "Chocolate Cookie",
+                1,
+                0);
+        Cookie.setPricePerDozen(-1);
+        Assert.assertNotEquals(-1, Cookie.getPricePerDozen(), 0.1);
+    }
+
+    @Test
+    public void testSetQuantityNegative() {
+        Cookie Cookie = new Cookie(
+                "Chocolate Cookie",
+                1,
+                0);
+        Cookie.setPricePerDozen(-1);
+        Assert.assertNotEquals(-1, Cookie.getPricePerDozen(), 0.1);
     }
 }
