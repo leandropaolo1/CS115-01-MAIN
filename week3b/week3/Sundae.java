@@ -18,7 +18,7 @@ public class Sundae extends IceCream {
             String toppingName,
             double toppingPrice) {
 
-        super(scoopCount, pricePerScoop, name.trim());
+        super(name.trim(), scoopCount, pricePerScoop);
         if (super.getName().trim().equals("")) {
             super.setName("Sundae");
         }

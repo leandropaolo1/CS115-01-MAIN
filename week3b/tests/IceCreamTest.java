@@ -29,11 +29,11 @@ public class IceCreamTest {
 
     @Test
     public void testConstructorWithArguments() {
-        IceCream iceCream = new IceCream("Chocolate", 1,1);
+        IceCream iceCream = new IceCream("Chocolate", 1,1.0);
         assertIceCream(
-                "",
+                "Chocolate",
                 1,
-                1,
+                1.0,
                 iceCream);
     } 
 
