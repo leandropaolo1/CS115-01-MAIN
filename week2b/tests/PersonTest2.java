@@ -1,5 +1,5 @@
 package tests;
-import week3.Person;
+import week2b.Person;
 import java.time.LocalDate;
 import org.junit.jupiter.api.*;
 import org.junit.Assert;

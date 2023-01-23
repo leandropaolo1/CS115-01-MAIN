@@ -4,11 +4,11 @@
  * Date: 22-JAN-2023
  */
 
-package week3b.tests;
+package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3b.week3.Candy;
+import week3.Candy;
 
 public class CandyTest {
 

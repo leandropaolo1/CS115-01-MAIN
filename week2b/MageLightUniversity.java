@@ -1,4 +1,4 @@
-import week3.Person;
+import week2b.Person;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;

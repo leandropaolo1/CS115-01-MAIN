@@ -3,11 +3,11 @@
  * Class: 115-01
  * Date: 22-JAN-2023
  */
-package week3b.tests;
+package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3b.week3.Sundae;
+import week3.Sundae;
 
 public class SundaeTest {
 
