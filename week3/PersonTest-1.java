@@ -1,4 +1,4 @@
-import week2.Person;
+import week3.Person;
 import org.junit.Assert;
 
 public class PersonTest {

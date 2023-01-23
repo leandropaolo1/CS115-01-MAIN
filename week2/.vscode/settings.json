@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/lpcooper/Documents/VSCODE/CS115-01-MAIN/junit-4.13.2.jar"
+    ]
+}
