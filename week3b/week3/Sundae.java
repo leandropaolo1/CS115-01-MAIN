@@ -1,29 +1,36 @@
 package week3b.week3;
 
-public class Sundae extends IceCream{
+
+public class Sundae extends IceCream {
     private String toppingName;
     private double toppingPrice;
 
-    public Sundae(){
+    public Sundae() {
         super();
-        this.toppingName="";
-        this.toppingPrice=0;
+        this.toppingName = "";
+        this.toppingPrice = 0;
     }
 
-    public Sundae(String name, double pricePerScoop,int scoopCount, String toppingName, double toppingPrice){
-        super(scoopCount,pricePerScoop,name.trim());
-        if(super.getName().trim().equals("")){
+    public Sundae(
+            String name,
+            int scoopCount,
+            double pricePerScoop,
+            String toppingName,
+            double toppingPrice) {
+
+        super(scoopCount, pricePerScoop, name.trim());
+        if (super.getName().trim().equals("")) {
             super.setName("Sundae");
         }
-        if(toppingName.length()<0)
-          throw new IllegalArgumentException("Topping Name cannot be blank");
+        if (toppingName.length() < 0)
+            throw new IllegalArgumentException("Topping Name cannot be blank");
 
-        if(toppingPrice<0){
+        if (toppingPrice < 0) {
             throw new IllegalArgumentException("Price cannot be negative");
         }
-        
-        this.toppingName=toppingName;
-        this.toppingPrice=toppingPrice;
+
+        this.toppingName = toppingName;
+        this.toppingPrice = toppingPrice;
     }
 
     public String getToppingName() {
@@ -32,8 +39,8 @@ public class Sundae extends IceCream{
 
     // setter method for toppingName attribute
     public void setToppingName(String toppingName) {
-        if(toppingName.length()<0)
-          throw new IllegalArgumentException("Topping Name cannot be blank");
+        if (toppingName.length() < 0)
+            throw new IllegalArgumentException("Topping Name cannot be blank");
 
         this.toppingName = toppingName;
     }
@@ -45,8 +52,8 @@ public class Sundae extends IceCream{
 
     // setter method for toppingPrice attribute
     public void setToppingPrice(double toppingPrice) {
-        if(toppingPrice<0)
-          throw new IllegalArgumentException("Price per scoop cannot be negative");
+        if (toppingPrice < 0)
+            throw new IllegalArgumentException("Price per scoop cannot be negative");
         this.toppingPrice = toppingPrice;
     }
 

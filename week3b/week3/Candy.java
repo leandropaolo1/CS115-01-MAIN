@@ -1,5 +1,6 @@
 package week3b.week3;
 
+
 public class Candy extends DessertItem{
     private double candyWeight;
     private double pricePerPound;

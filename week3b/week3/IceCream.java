@@ -1,5 +1,6 @@
 package week3b.week3;
 
+
 public class IceCream extends DessertItem{
     private int scoopCount;
     private double pricePerScoop;
