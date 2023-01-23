@@ -1,11 +1,8 @@
+package tests;
 import week3.Person;
 import java.time.LocalDate;
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
-
-/**
- * Unit test for simple App.
- */
 
  public class PersonTest {
 
