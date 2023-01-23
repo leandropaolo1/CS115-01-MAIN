@@ -34,7 +34,7 @@ public class SundaeTest {
     public void testDefaultConstructor() {
         Sundae sundae = new Sundae();
         assertSundae(
-                "",
+                "IceCream",
                 "",
                 0,
                 0,

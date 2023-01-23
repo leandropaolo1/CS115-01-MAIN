@@ -31,7 +31,7 @@ public class CookieTest {
     public void testDefaultConstructor() {
         Cookie Cookie = new Cookie();
         assertCookie(
-                "",
+                "Cookie",
                 0,
                 0,
                 Cookie);

@@ -15,7 +15,7 @@ public class DessertItem {
 
     // default constructor
     public DessertItem() {
-        this.name = "";
+        this.name = "Dessert";
     }
 
     // constructor with one argument

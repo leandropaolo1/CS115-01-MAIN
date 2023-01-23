@@ -16,7 +16,7 @@ public class Cookie extends DessertItem{
     private double pricePerDozen;
 
     public Cookie(){
-        super();
+        super("Cookie");
         this.cookieQty=0;
         this.pricePerDozen=0;
     }
@@ -24,15 +24,13 @@ public class Cookie extends DessertItem{
     public Cookie(String name, int quantity, double pricePerDozen){
         super(name.trim());
 
-        if(quantity<0){
-            throw new IllegalArgumentException("Quantity cannot be negative");
+        if(quantity>=0){
+            this.cookieQty=quantity;
         }
-        if(pricePerDozen<0){
-            throw new IllegalArgumentException("Price cannot be negative");
+        if(pricePerDozen>=0){
+            this.pricePerDozen=pricePerDozen;
         }
         
-        this.cookieQty=quantity;
-        this.pricePerDozen=pricePerDozen;
     }
 
     public double getQuantity() {
@@ -41,9 +39,9 @@ public class Cookie extends DessertItem{
 
     // setter method for quantity attribute
     public void setQuantity(int quantity) {
-        if(quantity<0)
-          throw new IllegalArgumentException("Quantity cannot be negative");
-        this.cookieQty = quantity;
+        if(quantity>=0){
+            this.cookieQty = quantity;
+        }
     }
 
     // getter method for pricePerDozen attribute
@@ -53,9 +51,10 @@ public class Cookie extends DessertItem{
 
     // setter method for pricePerDozen attribute
     public void setPricePerDozen(double pricePerDozen) {
-        if(pricePerDozen<0)
-          throw new IllegalArgumentException("Price per dozen cannot be negative");
-        this.pricePerDozen = pricePerDozen;
+        if(pricePerDozen>=0){
+            this.pricePerDozen = pricePerDozen;
+        };
+        
     }
 
 }

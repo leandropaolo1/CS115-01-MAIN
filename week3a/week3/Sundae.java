@@ -17,7 +17,7 @@ public class Sundae extends IceCream {
 
     public Sundae() {
         super();
-        this.toppingName = "";
+        this.toppingName = "Topping";
         this.toppingPrice = 0;
     }
 
@@ -32,15 +32,12 @@ public class Sundae extends IceCream {
         if (super.getName().trim().equals("")) {
             super.setName("Sundae");
         }
-        if (toppingName.length() < 0)
-            throw new IllegalArgumentException("Topping Name cannot be blank");
 
-        if (toppingPrice < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+        if (toppingPrice >= 0) {
+            this.toppingPrice = toppingPrice;
         }
 
         this.toppingName = toppingName;
-        this.toppingPrice = toppingPrice;
     }
 
     public String getToppingName() {
@@ -49,10 +46,9 @@ public class Sundae extends IceCream {
 
     // setter method for toppingName attribute
     public void setToppingName(String toppingName) {
-        if (toppingName.length() < 0)
-            throw new IllegalArgumentException("Topping Name cannot be blank");
+        if (toppingName.length() >= 0)
+            this.toppingName=toppingName;
 
-        this.toppingName = toppingName;
     }
 
     // getter method for toppingPrice attribute
@@ -62,9 +58,8 @@ public class Sundae extends IceCream {
 
     // setter method for toppingPrice attribute
     public void setToppingPrice(double toppingPrice) {
-        if (toppingPrice < 0)
-            throw new IllegalArgumentException("Price per scoop cannot be negative");
-        this.toppingPrice = toppingPrice;
+        if (toppingPrice >= 0)
+            this.toppingPrice = toppingPrice;
     }
 
 }

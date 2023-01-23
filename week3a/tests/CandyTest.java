@@ -32,7 +32,7 @@ public class CandyTest {
     public void testDefaultConstructor() {
         Candy Candy = new Candy();
         assertCandy(
-                "",
+                "Candy",
                 0,
                 0,
                 Candy);

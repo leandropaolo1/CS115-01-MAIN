@@ -31,7 +31,7 @@ public class IceCreamTest {
     public void testDefaultConstructor() {
         IceCream iceCream = new IceCream();
         assertIceCream(
-                "",
+                "IceCream",
                 0,
                 0,
                 iceCream);

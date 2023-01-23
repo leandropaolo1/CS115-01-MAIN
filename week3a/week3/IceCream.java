@@ -16,7 +16,7 @@ public class IceCream extends DessertItem{
     private double pricePerScoop;
 
     public IceCream(){
-        super();
+        super("IceCream");
         this.scoopCount=0;
         this.pricePerScoop=0;
     }
@@ -24,15 +24,13 @@ public class IceCream extends DessertItem{
     public IceCream(String name, int scoopCount, double pricePerScoop){
         super(name.trim());
 
-        if(scoopCount<0){
-            throw new IllegalArgumentException("Scoop count cannot be negative");
+        if(scoopCount>=0){
+            this.scoopCount=scoopCount;
         }
-        if(pricePerScoop<0){
-            throw new IllegalArgumentException("Price cannot be negative");
+        if(pricePerScoop>=0){
+            this.pricePerScoop=pricePerScoop;
         }
         
-        this.scoopCount=scoopCount;
-        this.pricePerScoop=pricePerScoop;
     }
 
     public double getScoopCount() {
@@ -41,9 +39,10 @@ public class IceCream extends DessertItem{
 
     // setter method for scoopCount attribute
     public void setScoopCount(int scoopCount) {
-        if(scoopCount<0)
-        throw new IllegalArgumentException("Scoop count cannot be negative");
-        this.scoopCount = scoopCount;
+        if(scoopCount>=0){
+            this.scoopCount = scoopCount;
+
+        }
     }
 
     // getter method for pricePerScoop attribute
@@ -53,9 +52,9 @@ public class IceCream extends DessertItem{
 
     // setter method for pricePerScoop attribute
     public void setPricePerScoop(double pricePerScoop) {
-        if(pricePerScoop<0)
-          throw new IllegalArgumentException("Price per scoop cannot be negative");
-        this.pricePerScoop = pricePerScoop;
+        if(pricePerScoop>=0){
+            this.pricePerScoop = pricePerScoop;
+        }
     }
 
 }

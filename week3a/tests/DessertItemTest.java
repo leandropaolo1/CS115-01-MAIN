@@ -19,7 +19,7 @@ public class DessertItemTest {
     @Test
     public void testDefaultConstructor() {
         DessertItem DessertItem = new DessertItem();
-        Assert.assertEquals("", DessertItem.getName());
+        Assert.assertEquals("Dessert", DessertItem.getName());
 
     }
 
