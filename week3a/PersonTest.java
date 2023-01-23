@@ -1,15 +1,16 @@
-package test;
-
+import week3.Person;
 import java.time.LocalDate;
+import org.junit.jupiter.api.*;
 import org.junit.Assert;
 
-import src.Person;
+/**
+ * Unit test for simple App.
+ */
+
+ public class PersonTest {
 
 
-public class PersonTest {
-
-
-    @org.junit.Test
+    @Test
     public void testNoArgumentConstructor() {
         Person person = new Person();
         Assert.assertEquals("", person.getName());
@@ -18,7 +19,7 @@ public class PersonTest {
         Assert.assertEquals("", person.getPhone());
     }
 
-    @org.junit.Test
+    @Test
     public void testParameterizedConstructor() {
         Person person = new Person("Leandro Cooper", LocalDate.of(1990,10,22), "male", "555-555-5555");
         Assert.assertEquals("Leandro Cooper", person.getName());
@@ -27,52 +28,52 @@ public class PersonTest {
         Assert.assertEquals("555-555-5555", person.getPhone());
     }
 
-    @org.junit.Test
+    @Test
     public void testGetName() {
         Person person = new Person("Leandro Cooper", LocalDate.of(1990,10,22), "male", "555-555-5555");
         Assert.assertEquals("Leandro Cooper", person.getName());
     }
 
-    @org.junit.Test
+    @Test
     public void testGetDob() {
         Person person = new Person("Leandro Cooper", LocalDate.of(1990,10,22), "male", "555-555-5555");
         Assert.assertEquals(LocalDate.of(1990, 10, 22), person.getDob());
     }
 
-    @org.junit.Test
+    @Test
     public void testGetGender() {
         Person person = new Person("Leandro Cooper", LocalDate.of(1990,10,22), "male", "555-555-5555");
         Assert.assertEquals("male", person.getGender());
     }
 
-    @org.junit.Test
+    @Test
     public void testGetPhone() {
         Person person = new Person("Leandro Cooper", LocalDate.of(1990,10,22), "male", "555-555-5555");
         Assert.assertEquals("555-555-5555", person.getPhone());
     }
 
-    @org.junit.Test
+    @Test
     public void testSetName() {
         Person person = new Person();
         person.setName("Jane");
         Assert.assertEquals("Jane", person.getName());
     }
 
-    @org.junit.Test
+    @Test
     public void testSetDob() {
         Person person = new Person();
         person.setDob("1998-05-10");
         Assert.assertEquals(LocalDate.of(1998, 5, 10), person.getDob());
     }
 
-    @org.junit.Test
+    @Test
     public void testSetGender() {
         Person person = new Person();
         person.setGender("Female");
         Assert.assertEquals("Female", person.getGender());
     }
 
-    @org.junit.Test
+    @Test
     public void testSetPhone() {
         Person person = new Person();
         person.setPhone("123-456-7890");
@@ -80,3 +81,4 @@ public class PersonTest {
     }
 
 }
+
