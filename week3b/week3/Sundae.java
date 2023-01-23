@@ -1,3 +1,8 @@
+/*
+ * Student: Leandro Cooper
+ * Class: 115-01
+ * Date: 22-JAN-2023
+ */
 package week3b.week3;
 
 

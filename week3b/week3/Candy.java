@@ -1,3 +1,9 @@
+/*
+ * Student: Leandro Cooper
+ * Class: 115-01
+ * Date: 22-JAN-2023
+ */
+
 package week3b.week3;
 
 
@@ -11,7 +17,7 @@ public class Candy extends DessertItem{
         this.pricePerPound=0;
     }
 
-    public Candy(Double weight, double pricePerPound, String name){
+    public Candy(String name, Double weight, double pricePerPound){
         super(name.trim());
 
         if(weight<0){

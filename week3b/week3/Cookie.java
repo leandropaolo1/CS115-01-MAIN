@@ -1,3 +1,8 @@
+/*
+ * Student: Leandro Cooper
+ * Class: 115-01
+ * Date: 22-JAN-2023
+ */
 package week3b.week3;
 
 
@@ -11,7 +16,7 @@ public class Cookie extends DessertItem{
         this.pricePerDozen=0;
     }
 
-    public Cookie(int quantity, double pricePerDozen, String name){
+    public Cookie(String name, int quantity, double pricePerDozen){
         super(name.trim());
 
         if(quantity<0){
