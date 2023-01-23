@@ -11,7 +11,7 @@ public class IceCream extends DessertItem{
         this.pricePerScoop=0;
     }
 
-    public IceCream(int scoopCount, double pricePerScoop, String name){
+    public IceCream(String name, int scoopCount, double pricePerScoop){
         super(name.trim());
 
         if(scoopCount<0){

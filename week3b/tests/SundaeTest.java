@@ -72,6 +72,7 @@ public class SundaeTest {
         sundae.setToppingName("Chocolate Syrup");
         Assert.assertEquals("Chocolate Syrup", sundae.getToppingName());
     }
+    
     @Test
     public void testGetToppingPrice() {
         Sundae sundae = new Sundae(
