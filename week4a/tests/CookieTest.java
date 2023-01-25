@@ -12,7 +12,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3.Cookie;
+import week4.Cookie;
 
 public class CookieTest {
 
@@ -103,5 +103,11 @@ public class CookieTest {
                 0);
         Cookie.setPricePerDozen(-1);
         Assert.assertNotEquals(-1, Cookie.getPricePerDozen(), 0.1);
+    }
+    @Test
+    public void testCalculateCost() {
+        Cookie cookie = new Cookie("Chocolate", 2, 3.5);
+        double expectedCost = 2 * 3.5;
+        Assert.assertEquals(expectedCost, cookie.calculateCost(), 0.001);
     }
 }

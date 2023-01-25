@@ -13,7 +13,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3.Candy;
+import week4.Candy;
 
 public class CandyTest {
 
@@ -92,4 +92,13 @@ public class CandyTest {
         Candy.setWeight(-1);
         Assert.assertNotEquals(-1, Candy.getWeight(), 0.1);
     }
+
+    @Test
+    public void testCalculateCost() {
+        Candy candy = new Candy("Chocolate", 2.0, 3.5);
+        double expectedCost = 2 * 3.5;
+        Assert.assertEquals(expectedCost, candy.calculateCost(), 0.001);
+    }
+
+
 }

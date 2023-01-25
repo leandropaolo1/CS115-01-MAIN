@@ -12,7 +12,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3.IceCream;
+import week4.IceCream;
 
 public class IceCreamTest {
 
@@ -103,5 +103,11 @@ public class IceCreamTest {
                 0);
         IceCream.setScoopCount(-1);
         Assert.assertNotEquals(-1, IceCream.getPricePerScoop(), 0.1);
+    }
+
+    public void testCalculateCost() {
+        IceCream IceCream = new IceCream("Chocolate", 2, 3.5);
+        double expectedCost = 2 * 3.5;
+        Assert.assertEquals(expectedCost, IceCream.calculateCost(), 0.001);
     }
 }

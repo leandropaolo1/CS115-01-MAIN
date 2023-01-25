@@ -12,34 +12,51 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3.DessertItem;
+import week4.Candy;
 
 public class DessertItemTest {
 
     @Test
     public void testDefaultConstructor() {
-        DessertItem DessertItem = new DessertItem();
-        Assert.assertEquals("Dessert", DessertItem.getName());
+        Candy candy = new Candy();
+        Assert.assertEquals("Candy", candy.getName());
+        Assert.assertEquals(7.25, candy.getTaxPercent(), 0.001);
 
     }
 
     @Test
     public void testConstructorWithArguments() {
-        DessertItem DessertItem = new DessertItem("Pudding");
-        Assert.assertEquals("Pudding", DessertItem.getName());
+        Candy candy = new Candy("Pudding", 0.1,0.1);
+        
+        Assert.assertEquals("Pudding", candy.getName());
+        Assert.assertEquals(7.25, candy.getTaxPercent(), 0.001);
 
     } 
     
     @Test
     public void testSetName() {
-        DessertItem DessertItem = new DessertItem();
-        DessertItem.setName("Pudding");
-        Assert.assertEquals("Pudding", DessertItem.getName());
+        Candy candy = new Candy();
+        candy.setName("Pudding");
+        Assert.assertEquals("Pudding", candy.getName());
     }
 
     @Test
     public void testGetName() {
-        DessertItem DessertItem = new DessertItem("Pudding");
-        Assert.assertEquals("Pudding", DessertItem.getName());
+        Candy candy = new Candy("Pudding", 0.1,0.1);
+        Assert.assertEquals("Pudding", candy.getName());
+    }
+
+    @Test
+    public void testSetTaxPercent() {
+        Candy candy = new Candy();
+        candy.setTaxPercent(8.5);
+        Assert.assertEquals(8.5, candy.getTaxPercent(), 0.001);
+    }
+
+    @Test
+    public void testGetTaxPercent() {
+        Candy candy = new Candy();
+       Assert.assertEquals(7.5, candy.getTaxPercent(), 0.001);
     }
 }
+

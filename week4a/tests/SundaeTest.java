@@ -12,7 +12,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import week3.Sundae;
+import week4.Sundae;
 
 public class SundaeTest {
 
@@ -118,5 +118,9 @@ public class SundaeTest {
         Assert.assertNotEquals(-1, sundae.getToppingPrice(),0.1);
     }
 
-
+    public void testCalculateCost() {
+        Sundae sundae = new Sundae("Chocolate", 2, 3.5, "Sparkles", 1);
+        double expectedCost = 2 * 3.5+1;
+        Assert.assertEquals(expectedCost, sundae.calculateCost(), 0.001);
+    }
 }
