@@ -56,7 +56,7 @@ public class DessertItemTest {
     @Test
     public void testGetTaxPercent() {
         Candy candy = new Candy();
-       Assert.assertEquals(7.5, candy.getTaxPercent(), 0.001);
+       Assert.assertEquals(7.25, candy.getTaxPercent(), 0.001);
     }
 }
 
