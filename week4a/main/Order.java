@@ -1,8 +1,14 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Order class that is used in dessert shop main function
+ * Lesson Learned: Learned to use an abstract superclass and overridding method within the subclass
  * Class: 115-01
- * Date: 22-JAN-2023
+ * Date: 24-JAN-2023
+ * Assignment: 4a
+ * 
  */
+
 package main;
 
 import week4.DessertItem;

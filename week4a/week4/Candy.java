@@ -1,11 +1,11 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: Candy Subclass that extendends from DessertItem
- * Lesson Learned: Learned to create a subclass
+ * Description: Candy Subclass with DesertItem superclass
+ * Lesson Learned: Learned to use an abstract superclass and overridding method within the subclass
  * Class: 115-01
- * Date: 22-JAN-2023
- * AssignmentL 3a
+ * Date: 24-JAN-2023
+ * Assignment: 4a
  * 
  */
 

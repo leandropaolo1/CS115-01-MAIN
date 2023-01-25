@@ -1,11 +1,11 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: Sundae Subclass Test using Junit
- * Lesson Learned: Learned to test a subclass with Junit
+ * Description: Sundae Test using Junit
+ * Lesson Learned: Learned to test an abstract superclass and overridding method with Junit
  * Class: 115-01
- * Date: 22-JAN-2023
- * AssignmentL 3a
+ * Date: 24-JAN-2023
+ * Assignment: 4a
  * 
  */
 package tests;

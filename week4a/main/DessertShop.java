@@ -1,8 +1,14 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: main funtion that uses the classes in week4a
+ * Lesson Learned: Learned to use an abstract superclass and overridding method within the subclass and printing in console
  * Class: 115-01
- * Date: 22-JAN-2023
+ * Date: 24-JAN-2023
+ * Assignment: 4a
+ * 
  */
+
 package main;
 
 import week4.*;

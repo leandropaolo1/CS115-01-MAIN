@@ -1,13 +1,14 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: SuperClass that extendends from DessertItem
- * Lesson Learned: Learned to create a subclass
+ * Description: abstract DesertItem superclass
+ * Lesson Learned: Learned to use an abstract superclass and  using it in subclasses
  * Class: 115-01
- * Date: 22-JAN-2023
- * AssignmentL 4a
+ * Date: 24-JAN-2023
+ * Assignment: 4a
  * 
  */
+
 package week4;
 
 public abstract class DessertItem {
