@@ -1,11 +1,11 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: Order class that is used in dessert shop main function
- * Lesson Learned: Learned to use an abstract superclass and overridding method within the subclass
+ * Description: main funtion that uses the classes in week5a and methods
+ * Lesson Learned: In this lab, I learned to override the Object.toString() method of all your classes to output a receipt
  * Class: 115-01
- * Date: 30-JAN-2023
- * Assignment: 4b
+ * Date: 1-FEB-2023
+ * Assignment: 5a
  * 
  */
 
