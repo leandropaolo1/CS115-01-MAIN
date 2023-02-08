@@ -1,9 +1,14 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Dessert class that runs the whole program
+ * Lesson Learned: How to use the classes made from other files
  * Class: 115-01
- * Date: 22-JAN-2023
+ * Date: 23-JAN-2023
+ * AssignmentL 3b
+ * 
  */
-package week3b;
+package main;
 
 import week3.DessertItem;
 import week3.*;

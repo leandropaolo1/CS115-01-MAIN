@@ -1,9 +1,14 @@
 /*
  * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Order class that holds items from other classes
+ * Lesson Learned: How to craete a class with a list with items from another class
  * Class: 115-01
- * Date: 22-JAN-2023
+ * Date: 23-JAN-2023
+ * AssignmentL 3b
+ * 
  */
-package week3b;
+package main;
 
 import week3.DessertItem;
 import java.util.ArrayList;
