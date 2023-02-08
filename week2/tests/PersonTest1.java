@@ -1,3 +1,20 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description:
+ * Person class is a java class that can hold information about a indivudal: name dob, gender and phone
+ * Lesson Learned: 
+ * Build a Java Class that includes
+    private attributes,
+    constructors,
+    getter methods, and
+    setter methods.
+ * Class: 115-01
+ * Date: 11-JAN-2023
+ * Assignment: 2a
+ * 
+ */
+
 package tests;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;

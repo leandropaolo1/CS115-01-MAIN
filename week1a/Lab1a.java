@@ -1,3 +1,24 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description:
+ * Review standard elements of java programming including:
+	Initializing variables
+	Creating comments
+	Outputting strings to the console
+	Getting input from the user through the console
+	Importing necessary libraries
+	While loops
+	For loops
+	Creating functions / methods
+	Try / Catch statements
+ * Lesson Learned: Remebering everything learned in CS 105
+ * Class: 115-01
+ * Date: 9-JAN-2023
+ * Assignment: 1a
+ * 
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
