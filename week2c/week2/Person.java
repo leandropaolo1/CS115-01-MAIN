@@ -11,12 +11,12 @@
     setter methods.
  * Class: 115-01
  * Date: 11-JAN-2023
- * Assignment: 2b
+ * Assignment: 2a
  * 
  */
 
-package week2;
 
+package week2;
 import java.time.LocalDate;
 
 

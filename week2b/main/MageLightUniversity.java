@@ -8,10 +8,11 @@
  * 
  */
 
-import week2b.Person;
+package main;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import week2.Person;
 
 class MageLightUniversity{
 

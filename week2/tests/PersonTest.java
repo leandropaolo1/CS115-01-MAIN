@@ -23,7 +23,7 @@ import org.junit.Assert;
 import week2.Person;
 
 
-public class PersonTest1 {
+public class PersonTest {
 
 
     @Test

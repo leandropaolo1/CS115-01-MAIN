@@ -1,20 +1,23 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: Person Test using Junit
- * Lesson Learned: Learned to test a superclass with Junit
- * Class: 115-01
- * Date: 22-JAN-2023
+ * Description:
+ * Person class is a java class that can Test the information from Person class from a indivudal: name dob, gender and phone
+ * Lesson Learned: How to test a class using Junit
+ * Date: 11-JAN-2023
+ * Assignment: 2b
  * 
  */
 
+
 package tests;
-import week2b.Person;
+import week2.Person;
 import java.time.LocalDate;
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
 
- public class PersonTest2 {
+
+ public class PersonTest {
 
 
     @Test
