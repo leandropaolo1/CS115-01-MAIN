@@ -4,8 +4,8 @@
  * Description:
  * Person class is a java class that can Test the information from Person class from a indivudal: name dob, gender and phone
  * Lesson Learned: How to test a class using Junit
- * Date: 11-JAN-2023
- * Assignment: 2b
+ * Date: 18-JAN-2023
+ * Assignment: 2c
  * 
  */
 
