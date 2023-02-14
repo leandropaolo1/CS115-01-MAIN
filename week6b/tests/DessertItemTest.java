@@ -59,5 +59,62 @@ public class DessertItemTest {
         Candy candy = new Candy();
        Assert.assertEquals(7.25, candy.getTaxPercent(), 0.001);
     }
+
+    @Test
+    public void testCompareToLessThan() {
+        DessertItem item_1 = new DessertItem("Item 1") {
+            @Override
+            public double calculateCost() {
+                return 5.0;
+            }
+        };
+
+        DessertItem item_2 = new DessertItem("Item 2") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        Assert.assertEquals(-1, item_1.compareTo(item_2));
+    }
+
+    @Test
+    public void testCompareToGreaterThan() {
+        DessertItem item_1 = new DessertItem("Item 1") {
+            @Override
+            public double calculateCost() {
+                return 15.0;
+            }
+        };
+
+        DessertItem item_2 = new DessertItem("Item 2") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        Assert.assertEquals(1, item_1.compareTo(item_2));
+    }
+
+    @Test
+    public void testCompareToEqual() {
+        DessertItem item_1 = new DessertItem("Item 1") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        DessertItem item_2 = new DessertItem("Item 2") {
+            @Override
+            public double calculateCost() {
+                return 10.0;
+            }
+        };
+
+        Assert.assertEquals(0, item_1.compareTo(item_2));
+    }
 }
 
