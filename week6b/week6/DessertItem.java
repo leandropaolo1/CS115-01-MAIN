@@ -69,10 +69,10 @@ public abstract class DessertItem implements Packaging, Comparable<DessertItem> 
     }
 
     @Override
-    public int compareTo(DessertItem otherItem) {
-        if (calculateCost() < otherItem.calculateCost()) {
+    public int compareTo(DessertItem some_other_Item) {
+        if (calculateCost() < some_other_Item.calculateCost()) {
             return -1;
-        } else if (calculateCost() > otherItem.calculateCost()) {
+        } else if (calculateCost() > some_other_Item.calculateCost()) {
             return 1;
         } else {
             return 0;
