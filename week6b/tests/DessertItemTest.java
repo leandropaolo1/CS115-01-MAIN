@@ -66,14 +66,14 @@ public class DessertItemTest {
         DessertItem item_1 = new DessertItem("Item 1") {
             @Override
             public double calculateCost() {
-                return 5.0;
+                return 1;
             }
         };
 
         DessertItem item_2 = new DessertItem("Item 2") {
             @Override
             public double calculateCost() {
-                return 10.0;
+                return 2;
             }
         };
 
@@ -86,14 +86,14 @@ public class DessertItemTest {
         DessertItem item_1 = new DessertItem("Item 1") {
             @Override
             public double calculateCost() {
-                return 15.0;
+                return 2;
             }
         };
 
         DessertItem item_2 = new DessertItem("Item 2") {
             @Override
             public double calculateCost() {
-                return 10.0;
+                return 1;
             }
         };
 
@@ -105,14 +105,14 @@ public class DessertItemTest {
         DessertItem item_1 = new DessertItem("Item 1") {
             @Override
             public double calculateCost() {
-                return 10.0;
+                return 1;
             }
         };
 
         DessertItem item_2 = new DessertItem("Item 2") {
             @Override
             public double calculateCost() {
-                return 10.0;
+                return 1;
             }
         };
 
