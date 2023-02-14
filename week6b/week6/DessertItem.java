@@ -1,8 +1,8 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: main funtion that uses the classes in week5b and methods with bold lettering
- * Lesson Learned: In this lab, I learned to override the Object.toString() method of all your classes to output a receipt with bold lettering and extends class
+ * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
+ * Lesson Learned: In this lab, I learned to add the Comparable iterface 
  * Class: 115-01
  * Date: 6-FEB-2023
  * Assignment: 5b
@@ -13,7 +13,7 @@
 package week6;
 import main.Packaging;
 
-public abstract class DessertItem implements Packaging {
+public abstract class DessertItem implements Packaging, Comparable<DessertItem> {
     private String name;
     private double taxPercent = 7.25;
     private String packaging;
@@ -66,5 +66,16 @@ public abstract class DessertItem implements Packaging {
     // method to calculate and return tax for the item
     public double calculateTax() {
         return calculateCost() * (taxPercent / 100);
+    }
+
+    @Override
+    public int compareTo(DessertItem otherItem) {
+        if (calculateCost() < otherItem.calculateCost()) {
+            return -1;
+        } else if (calculateCost() > otherItem.calculateCost()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
