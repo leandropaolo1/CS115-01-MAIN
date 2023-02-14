@@ -87,7 +87,7 @@ public class Sundae extends IceCream {
         int scoopCount = (int) Math.round(this.getScoopCount());
         double cost = this.calculateCost();
         double tax = this.calculateTax();
-        return String.format("%s Sundae \033[1m(%s)\033[0m \n %d scoops of %s @ $%.2f/scoop %s topping @ $%.2f : $%.2f [Tax: $%.2f]", name, getPackaging(), scoopCount, name,
+        return String.format("%s Sundae \033[1m(%s)\033[0m \n %d scoops of %s @ $%.2f/scoop \n %s topping @ $%.2f : $%.2f [Tax: $%.2f]", name, getPackaging(), scoopCount, name,
                 super.getPricePerScoop(), this.toppingName, this.toppingPrice,
                 cost, tax);
     }

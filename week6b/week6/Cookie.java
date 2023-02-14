@@ -11,6 +11,7 @@
 
 
 package week6;
+import java.lang.Math;
 
 public class Cookie extends DessertItem {
     private int cookieQty;
@@ -74,7 +75,8 @@ public class Cookie extends DessertItem {
 
     @Override
     public double calculateCost() {
-        return cookieQty * pricePerDozen;
+        double result = cookieQty * (Math.round(pricePerDozen/12 * 100.0) / 100.0);
+        return result;
     }
 
     @Override

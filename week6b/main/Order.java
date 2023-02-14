@@ -13,6 +13,7 @@ package main;
 
 import week6.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Order implements Payable {
@@ -30,6 +31,7 @@ public class Order implements Payable {
 
     public void add(DessertItem item) {
         order.add(item);
+        Collections.sort(order);
     }
 
     public int itemCount() {

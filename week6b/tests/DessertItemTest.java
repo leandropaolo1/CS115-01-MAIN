@@ -1,13 +1,14 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: DessertItem Test using Junit
- * Lesson Learned: Learned to test an abstract superclass and overridding method with Junit
+ * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
+ * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
  * Class: 115-01
- * Date: 24-JAN-2023
- * Assignment: 4a
+ * Date: 13-FEB-2023
+ * Assignment: 6b
  * 
  */
+
 package tests;
 
 import org.junit.jupiter.api.Test;

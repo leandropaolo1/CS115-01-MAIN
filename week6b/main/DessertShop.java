@@ -1,13 +1,14 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: main funtion that uses the classes in week6A and methods with bold lettering interface addition
- * Lesson Learned: In this lab, I learned to override the Object.toString() method and how to use an EMUM in a class and compare stuff and everything else
+ * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
+ * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
  * Class: 115-01
- * Date: 8-FEB-2023
- * Assignment: 6A
+ * Date: 13-FEB-2023
+ * Assignment: 6b
  * 
  */
+
 
 package main;
 
@@ -36,7 +37,7 @@ public class DessertShop {
         int number = in.nextInt();
         in.nextLine(); // consume the line break
         System.out.print("Enter price per dozen: ");
-        int pricePerDozen = in.nextInt();
+        double pricePerDozen = in.nextDouble();
         in.nextLine(); // consume the line break
         return new Cookie(name, number, pricePerDozen);
     }
@@ -47,7 +48,7 @@ public class DessertShop {
         System.out.print("Enter scoop count: ");
         int scoopCount = in.nextInt();
         System.out.print("Enter scoop price: ");
-        int price = in.nextInt();
+        double price = in.nextDouble();
         in.nextLine(); // consume the line break
         return new IceCream(name, scoopCount, price);
     }
@@ -85,7 +86,7 @@ public class DessertShop {
     }
 
     public static void main(String[] args) {
-        Order order1 = new Order();
+        Order order = new Order();
         Scanner sIn = new Scanner(System.in);
         String choice;
         DessertItem orderItem;
@@ -106,23 +107,23 @@ public class DessertShop {
                 switch (choice) {
                     case "1":
                         orderItem = userPromptCandy();
-                        order1.add(orderItem);
+                        order.add(orderItem);
                         System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
                         break;
                     case "2":
                         orderItem = userPromptCookie();
-                        order1.add(orderItem);
+                        order.add(orderItem);
                         System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
                         break;
 
                     case "3":
                         orderItem = userPromptIceCream();
-                        order1.add(orderItem);
+                        order.add(orderItem);
                         System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
                         break;
                     case "4":
                         orderItem = userPromptSundae();
-                        order1.add(orderItem);
+                        order.add(orderItem);
                         System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
                         break;
                     default:
@@ -131,8 +132,8 @@ public class DessertShop {
                 }// end of switch (choice)
             } // end of if (choice.equals(""))
         } // end of while (!done)
-        askPaymentMethod(sIn, order1);
-        String order_string = order1.toString();
+        askPaymentMethod(sIn, order);
+        String order_string = order.toString();
         System.out.println(order_string);
     }
 }
