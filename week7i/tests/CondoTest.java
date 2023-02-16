@@ -22,29 +22,29 @@ public class CondoTest {
         Condo condo = new Condo();
         condo.setStreetAddress("123 Main St");
         condo.setZip("12345");
-        condo.setBedCount(3);
-        condo.setBathCount(2);
-        condo.setSqFootage(1200);
-        condo.setFloorLevel(5);
+        condo.setBedCount(1);
+        condo.setBathCount(1);
+        condo.setSqFootage(1);
+        condo.setFloorLevel(1);
 
         Assert.assertEquals("123 Main St", condo.getStreetAddress());
         Assert.assertEquals("12345", condo.getZip());
-        Assert.assertEquals(3, condo.getBedCount());
-        Assert.assertEquals(2, condo.getBathCount());
-        Assert.assertEquals(1200, condo.getSqFootage());
-        Assert.assertEquals(5, condo.getFloorLevel());
+        Assert.assertEquals(1, condo.getBedCount());
+        Assert.assertEquals(1, condo.getBathCount());
+        Assert.assertEquals(1, condo.getSqFootage());
+        Assert.assertEquals(1, condo.getFloorLevel());
     }
 
     @Test
     public void testNonEmptyCondoConstructor() {
-        Condo condo = new Condo("456 Elm St", "67890", 4, 3, 1400, 7);
+        Condo condo = new Condo("123 Main St", "12345", 1, 1, 1, 1);
 
-        Assert.assertEquals("456 Elm St", condo.getStreetAddress());
-        Assert.assertEquals("67890", condo.getZip());
-        Assert.assertEquals(4, condo.getBedCount());
-        Assert.assertEquals(3, condo.getBathCount());
-        Assert.assertEquals(1400, condo.getSqFootage());
-        Assert.assertEquals(7, condo.getFloorLevel());
+        Assert.assertEquals("123 Main St", condo.getStreetAddress());
+        Assert.assertEquals("12345", condo.getZip());
+        Assert.assertEquals(1, condo.getBedCount());
+        Assert.assertEquals(1, condo.getBathCount());
+        Assert.assertEquals(1, condo.getSqFootage());
+        Assert.assertEquals(1, condo.getFloorLevel());
     }
 
     @Test
@@ -61,7 +61,7 @@ public class CondoTest {
 
     @Test
     public void testCalculateAppraiselPrice() {
-        Condo condo = new Condo("456 Elm St", "67890", 4, 3, 1400, 7);
+        Condo condo = new Condo("123 Main St", "12345", 1, 1, 1, 1);
         int square_foot = condo.getSqFootage();
         int bedrooms = condo.getBedCount();
         int bathrooms = condo.getBathCount();

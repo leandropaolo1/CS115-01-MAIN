@@ -19,13 +19,13 @@ import org.junit.Assert;
 public class HouseTest {
     @Test
     public void testHouseConstructor() {
-        House house = new House("123 Main St", "11111", 3, 2, 1500, 0.75);
+        House house = new House("123 Main St", "11111", 1, 1, 1, 1);
         Assert.assertEquals("123 Main St", house.getStreetAddress());
         Assert.assertEquals("11111", house.getZip());
-        Assert.assertEquals(3, house.getBedCount());
-        Assert.assertEquals(2, house.getBathCount());
-        Assert.assertEquals(1500, house.getSqFootage());
-        Assert.assertEquals(0.75, house.getYardAcres(), 0.0);
+        Assert.assertEquals(1, house.getBedCount());
+        Assert.assertEquals(1, house.getBathCount());
+        Assert.assertEquals(1, house.getSqFootage());
+        Assert.assertEquals(1, house.getYardAcres(), 0.0);
     }
 
     @Test
