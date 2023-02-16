@@ -5,30 +5,43 @@
  * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
  * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
  * Class: 115-01
- * Date: 1-FEB-2023
- * AssignmentL 4i
+ * Date: 15-FEB-2023
+ * AssignmentL 7i
  * 
  */
 package week7;
 
 public class Condo extends Residential {
-    private int floorLvl;
+    private int floorLevel;
 
     public Condo() {
         super();
-        this.floorLvl = 0;
+        this.floorLevel = 0;
     }
 
-    public Condo(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, int floorLvl) {
+    public Condo(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, int floorLevel) {
         super(streetAddress, zip, bedCount, bathCount, sqFootage);
-        this.floorLvl = floorLvl;
+        this.floorLevel = floorLevel;
     }
 
-    public int getFloorLvl() {
-        return floorLvl;
+    public int getFloorLevel() {
+        return floorLevel;
     }
 
-    public void setFloorLvl(int floorLvl) {
-        this.floorLvl = floorLvl;
+    public void setFloorLevel(int floorLevel) {
+        this.floorLevel= floorLevel;
     }
+
+    @Override
+    public int calculateAppraisalPrice(){
+        int square_foot = super.getSqFootage();
+        int bedrooms = super.getBedCount();
+        int bathrooms = super.getBathCount();
+        int fullFloor = (int)Math.round(this.floorLevel);
+        int total = (square_foot * 88) + (8_000 * bedrooms) + (10_000 * bathrooms) + (5_000 * fullFloor);
+        
+        super.setAppraisalPrice(total);
+
+        return total;
+    }    
 }

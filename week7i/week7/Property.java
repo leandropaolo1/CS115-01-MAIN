@@ -5,8 +5,8 @@
  * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
  * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
  * Class: 115-01
- * Date: 1-FEB-2023
- * AssignmentL 4i
+ * Date: 15-FEB-2023
+ * AssignmentL 7i
  * 
  */
 package week7;
@@ -14,8 +14,8 @@ package week7;
 public abstract class Property {
     private String streetAddress;
     private String zip;
-    private double listPrice=0.0;
-    private double appraisalPrice=0.0;
+    private int listPrice=0;
+    private int appraisalPrice=0;
 
     public Property(String streetAddress, String zip) {
         this.streetAddress = streetAddress;
@@ -44,18 +44,22 @@ public abstract class Property {
         this.zip = zip;
     }
 
-    public Double getListPrice() {
+    public int getListPrice() {
         return listPrice;
     }
 
-    public Double getAppraisalPrice() {
-        return appraisalPrice;
-    }
-
-    protected void setListPrice(double listPrice){
+    public void setListPrice(int listPrice){
         this.listPrice = listPrice;
     }
 
-    public abstract double calculateAppraisalPrice();
+    public int getAppraisalPrice() {
+        return appraisalPrice;
+    }
+
+    protected void setAppraisalPrice(int appraisalPrice) {
+        this.appraisalPrice = appraisalPrice;
+    }
+
+    public abstract int calculateAppraisalPrice();
 
 }

@@ -5,8 +5,8 @@
  * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
  * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
  * Class: 115-01
- * Date: 1-FEB-2023
- * AssignmentL 4i
+ * Date: 15-FEB-2023
+ * AssignmentL 7i
  * 
  */
 package tests;
@@ -50,5 +50,15 @@ public class HouseTest {
         House house = new House();
         house.setYardAcres(0.5);
         Assert.assertEquals(0.5, house.getYardAcres(), 0.0);
+    }
+
+    @Test
+    public void calculateAppraisalPriceMethod(){
+        House house = new House("123 Main St", "12345", 1, 1, 1000, 1);
+        house.calculateAppraisalPrice();
+        int expectedAppraisalPrice = (1000 * 97) + (10000 * 1) + (12000 * 1) + (46000 * 1);
+        int actualAppraisalPrice = house.calculateAppraisalPrice();
+        Assert.assertEquals(expectedAppraisalPrice, actualAppraisalPrice);
+    
     }
 }
