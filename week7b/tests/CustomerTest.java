@@ -1,16 +1,15 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.Before;
 import org.junit.Test;
-import java.util.ArrayList;
-import clients.*;
+import people.*;
+
 
 public class CustomerTest {
 
     Customer dummy_customer;
     
-    @Before
+    @Test
     public void setUp() {
         dummy_customer = new Customer("John Smith");
     }
