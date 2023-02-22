@@ -9,7 +9,6 @@
  * 
  */
 
-
 package main;
 
 import java.util.Scanner;
@@ -87,54 +86,63 @@ public class DessertShop {
     }
 
     public static void main(String[] args) {
-        Order order = new Order();
         Scanner sIn = new Scanner(System.in);
         String choice;
         DessertItem orderItem;
+        boolean closed = false;
+        while (!closed) {
+            boolean done = false;
+            Order order = new Order();
+            while (!done) {
+                System.out.println("\n1: Candy");
+                System.out.println("2: Cookie");
+                System.out.println("3: Ice Cream");
+                System.out.println("4: Sunday");
 
-        boolean done = false;
-        while (!done) {
-            System.out.println("\n1: Candy");
-            System.out.println("2: Cookie");
-            System.out.println("3: Ice Cream");
-            System.out.println("4: Sunday");
+                System.out.print("\nWhat would you like to add to the order? (1-4, Enter for done): ");
+                choice = sIn.nextLine();
 
-            System.out.print("\nWhat would you like to add to the order? (1-4, Enter for done): ");
-            choice = sIn.nextLine();
+                if (choice.equals("")) {
+                    done = true;
+                } else {
+                    switch (choice) {
+                        case "1":
+                            orderItem = userPromptCandy();
+                            order.add(orderItem);
+                            System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
+                            break;
+                        case "2":
+                            orderItem = userPromptCookie();
+                            order.add(orderItem);
+                            System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
+                            break;
 
-            if (choice.equals("")) {
-                done = true;
-            } else {
-                switch (choice) {
-                    case "1":
-                        orderItem = userPromptCandy();
-                        order.add(orderItem);
-                        System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
-                        break;
-                    case "2":
-                        orderItem = userPromptCookie();
-                        order.add(orderItem);
-                        System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
-                        break;
+                        case "3":
+                            orderItem = userPromptIceCream();
+                            order.add(orderItem);
+                            System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
+                            break;
+                        case "4":
+                            orderItem = userPromptSundae();
+                            order.add(orderItem);
+                            System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
+                            break;
+                        default:
+                            System.out.println("Invalid response:  Please enter a choice from the menu (1-4)");
+                            break;
+                    }// end of switch (choice)
+                } // end of if (choice.equals(""))
+            } // end of while (!done)
+            askPaymentMethod(sIn, order);
+            String order_string = order.toString();
+            System.out.println(order_string);
 
-                    case "3":
-                        orderItem = userPromptIceCream();
-                        order.add(orderItem);
-                        System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
-                        break;
-                    case "4":
-                        orderItem = userPromptSundae();
-                        order.add(orderItem);
-                        System.out.printf("%n%s has been added to your order.%n", orderItem.getName());
-                        break;
-                    default:
-                        System.out.println("Invalid response:  Please enter a choice from the menu (1-4)");
-                        break;
-                }// end of switch (choice)
-            } // end of if (choice.equals(""))
-        } // end of while (!done)
-        askPaymentMethod(sIn, order);
-        String order_string = order.toString();
-        System.out.println(order_string);
+            System.out.print("\nPress type/press Enter to start a new order, or type 'closed' meaning our store is closed and so you must exit or we call the cops: ");
+            String input = sIn.nextLine();
+            if (input.equals("closed")) {
+                closed = true;
+            }
+        }
     }
+
 }
