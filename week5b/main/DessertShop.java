@@ -37,7 +37,7 @@ public class DessertShop {
         int number = in.nextInt();
         in.nextLine(); // consume the line break
         System.out.print("Enter price per dozen: ");
-        int pricePerDozen = in.nextInt();
+        double pricePerDozen = in.nextDouble();
         in.nextLine(); // consume the line break
         return new Cookie(name, number, pricePerDozen);
     }
@@ -48,7 +48,7 @@ public class DessertShop {
         System.out.print("Enter scoop count: ");
         int scoopCount = in.nextInt();
         System.out.print("Enter scoop price: ");
-        int price = in.nextInt();
+        double price = in.nextDouble();
         in.nextLine(); // consume the line break
         return new IceCream(name, scoopCount, price);
     }
@@ -66,7 +66,6 @@ public class DessertShop {
 
         System.out.print("Enter topping price: ");
         double toppingPrice = in.nextDouble();
-
         in.nextLine(); // consume the line break
         return new Sundae(name, scoopCount, scoopPrice, toppingsName, toppingPrice);
     }
@@ -134,5 +133,6 @@ public class DessertShop {
         
         String order_string = order1.toString();
         System.out.println(order_string);
+        sIn.close();
     }
 }
