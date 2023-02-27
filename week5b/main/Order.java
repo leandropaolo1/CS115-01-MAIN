@@ -71,9 +71,8 @@ public class Order {
         String line = "-----------------------------------------";
 
         System.out.println(line);
-        sb.append(String.format("\n%-25s%d", "Items:", items));
-        sb.append(String.format("\n%-25s$%-8.2f", "Subtotal:", subtotal));
-        sb.append(String.format("\n%-25s$%-8.2f", "Tax:", tax));
+        sb.append(String.format("\n%-25s%d", "Total Number of items in order:", items));
+        sb.append(String.format("\n%-25s$%-8.2f [Tax: $%.2f] ", "Subtotal:", subtotal, tax));
         sb.append(String.format("\n%-25s$%-8.2f", "Total:", subtotal + tax));
         sb.append(String.format("\n \n %s", line));
 
