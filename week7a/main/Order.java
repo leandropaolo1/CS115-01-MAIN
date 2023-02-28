@@ -34,25 +34,52 @@ public class Order implements Payable {
             Candy new_candy = (Candy) item;
             for (DessertItem dessert_item : order) {
                 if (dessert_item instanceof Candy && new_candy.isSameAs((Candy) dessert_item)) {
-                    
                     Candy old_candy = (Candy) dessert_item;
-                    double combined_weight = old_candy.getWeight() + new_candy.getWeight();
-                    old_candy.setWeight(combined_weight);
+                    if (new_candy.getPricePerPound() == old_candy.getPricePerPound() && old_candy.getName() == new_candy.getName()){
+                        double combined_weight = old_candy.getWeight() + new_candy.getWeight();
+                        old_candy.setWeight(combined_weight);
+                    }
+                    else{
+                        order.add(item);
+                    }
+                }
+                else{
+                    order.add(item);
                 }
             }
+            if(order.size() ==0){
+                order.add(item);
+            }  
+            Collections.sort(order);
+  
         } else if (item instanceof Cookie) {
             Cookie new_cookie = (Cookie) item;
+
             for (DessertItem dessert_item : order) {
                 if (dessert_item instanceof Cookie && new_cookie.isSameAs((Cookie) dessert_item)) {
-                    
                     Cookie old_cookie = (Cookie) dessert_item;
-                    int combined_quantity = old_cookie.getQuantity() + new_cookie.getQuantity();
-                    old_cookie.setQuantity(combined_quantity);
+                    if(old_cookie.getPricePerDozen() == new_cookie.getPricePerDozen() && old_cookie.getName() == new_cookie.getName()){
+                        int combined_quantity = old_cookie.getQuantity() + new_cookie.getQuantity();
+                        old_cookie.setQuantity(combined_quantity);
+                    }
+                    else{
+                        order.add(item);
+                    }
+                }
+                else{
+                    order.add(item);
                 }
             }
+            if(order.size() ==0){
+                order.add(item);
+            }
+            Collections.sort(order);
+   
         }
-        order.add(item);
-        Collections.sort(order);
+        else{
+            order.add(item);
+            Collections.sort(order);
+        }   
     }
 
     public int itemCount() {
