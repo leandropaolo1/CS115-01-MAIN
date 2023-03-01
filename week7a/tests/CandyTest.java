@@ -102,5 +102,12 @@ public class CandyTest {
         Assert.assertEquals(expectedCost, candy.calculateCost(), 0.001);
     }
 
+    @Test
+    public void testIsSame(){
+        Candy candy = new Candy("Chocolate", 2.0, 3.5);
+        Candy candy2 = new Candy("Chocolate", 2.0, 3.5);
+
+        Assert.assertEquals(true, candy.isSameAs(candy2));
+    }
 
 }

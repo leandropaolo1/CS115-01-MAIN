@@ -109,7 +109,15 @@ public class CookieTest {
     @Test
     public void testCalculateCost() {
         Cookie cookie = new Cookie("Chocolate", 2, 3.5);
-        double expectedCost = 2 * 3.5;
-        Assert.assertEquals(expectedCost, cookie.calculateCost(), 0.001);
+        Assert.assertEquals(0.58, cookie.calculateCost(), 0.001);
     }
+
+    @Test
+    public void testIsSame(){
+        Cookie cookie = new Cookie("Chocolate", 2, 3.5);
+        Cookie cookie2 = new Cookie("Chocolate", 2, 3.5);
+
+        Assert.assertEquals(true, cookie.isSameAs(cookie2));
+    }
+
 }
