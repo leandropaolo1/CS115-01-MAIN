@@ -12,16 +12,13 @@
 package main;
 
 import java.util.Scanner;
-
-import people.Customer;
-
 import java.util.HashMap;
-
 import week8.*;
+import people.*;
 
 public class DessertShop {
     private static Scanner in = new Scanner(System.in);
-
+    public static HashMap<String, Customer> customerDB = new HashMap<>();
     private static DessertItem userPromptCandy() {
         System.out.print("Enter candy name: ");
         String name = in.nextLine();
@@ -89,8 +86,6 @@ public class DessertShop {
         order.setPayType(payType);
     }
 
-    public static HashMap<String, Customer> customerDB = new HashMap<String, Customer>();
-
     public static void main(String[] args) {
         Scanner sIn = new Scanner(System.in);
         String choice;
@@ -109,11 +104,6 @@ public class DessertShop {
                 choice = sIn.nextLine();
 
                 if (choice.equals("")) {
-                    System.out.print("\nWhat name is this order under? ");
-                    String customerName = sIn.nextLine();
-                    Customer customer = new Customer(customerName);
-                    
-                    customerDB.put(customerName, customer);
                     done = true;
                 } else {
                     switch (choice) {
@@ -144,14 +134,30 @@ public class DessertShop {
                     }// end of switch (choice)
                 } // end of if (choice.equals(""))
             } // end of while (!done)
-            askPaymentMethod(sIn, order);
             String order_string = order.toString();
             System.out.println(order_string);
 
-            System.out.print("\nPress type/press Enter to start a new order, or type 'closed' meaning our store is closed and so you must exit or we call the cops: ");
+            System.out.print("\nName to which order is under: ");
             String input = sIn.nextLine();
-            if (input.equals("closed")) {
+
+            if (input.equals("")) {
                 closed = true;
+            }
+            else{
+                String customerName = input;
+                Customer customer = customerDB.get(customerName);
+                if(customer == null){
+                    customer = new Customer(customerName);
+                    customer.addToHistory(order);
+                    askPaymentMethod(sIn, order);
+
+                }
+                else{
+                    customer.addToHistory(order);
+                    askPaymentMethod(sIn, order);
+
+                }
+
             }
         }
     }
