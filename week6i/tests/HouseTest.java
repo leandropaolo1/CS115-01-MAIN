@@ -11,7 +11,7 @@
  */
 package tests;
 
-import week7.*;
+import week6.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;

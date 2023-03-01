@@ -9,7 +9,7 @@
  * AssignmentL 7i
  * 
  */
-package week7;
+package week6;
 
 public abstract class Residential extends Property {
     private int bedCount;

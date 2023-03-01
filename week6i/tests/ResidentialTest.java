@@ -12,7 +12,7 @@
 
 package tests;
 
-import week7.*;
+import week6.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
@@ -21,7 +21,8 @@ public class ResidentialTest {
 
     @Test
     public void testResidentialConstructor() {
-        Residential residential = new Residential("123 Main St", "11111", 3, 2, 1500);
+
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
         Assert.assertEquals("123 Main St", residential.getStreetAddress());
         Assert.assertEquals("11111", residential.getZip());
         Assert.assertEquals(3, residential.getBedCount());
@@ -31,7 +32,7 @@ public class ResidentialTest {
 
     @Test
     public void testEmptyResidentialConstructor() {
-        Residential residential = new Residential();
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
         Assert.assertEquals("Property", residential.getStreetAddress());
         Assert.assertEquals("00000", residential.getZip());
         Assert.assertEquals(0, residential.getBedCount());
@@ -41,39 +42,39 @@ public class ResidentialTest {
 
     @Test
     public void testGetBedCount() {
-        Residential residential = new Residential();
-        Assert.assertEquals(0, residential.getBedCount());
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
+        Assert.assertEquals(1, residential.getBedCount());
     }
 
     @Test
     public void testSetBedCount() {
-        Residential residential = new Residential();
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
         residential.setBedCount(3);
         Assert.assertEquals(3, residential.getBedCount());
     }
 
     @Test
     public void testGetBathCount() {
-        Residential residential = new Residential();
-        Assert.assertEquals(0, residential.getBathCount());
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
+        Assert.assertEquals(1, residential.getBathCount());
     }
 
     @Test
     public void testSetBathCount() {
-        Residential residential = new Residential();
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
         residential.setBathCount(2);
         Assert.assertEquals(2, residential.getBathCount());
     }
 
     @Test
     public void testGetSqFootage() {
-        Residential residential = new Residential();
-        Assert.assertEquals(0, residential.getSqFootage());
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
+        Assert.assertEquals(1, residential.getSqFootage());
     }
 
     @Test
     public void testSetSqFootage() {
-        Residential residential = new Residential();
+        House residential = new House("123 Main St", "11111", 1, 1, 1, 1.0);
         residential.setSqFootage(1000);
         Assert.assertEquals(1000, residential.getSqFootage());
     }

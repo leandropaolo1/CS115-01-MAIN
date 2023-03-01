@@ -9,7 +9,7 @@
  * AssignmentL 7i
  * 
  */
-package week7;
+package week6;
 
 public class Condo extends Residential {
     private int floorLevel;
