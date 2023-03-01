@@ -32,57 +32,27 @@ public class Order implements Payable {
     public void add(DessertItem item) {
         if (item instanceof Candy) {
             Candy new_candy = (Candy) item;
-            boolean add_item = true;
             for (DessertItem dessert_item : order) {
-                if (dessert_item instanceof Candy) {
+                if (dessert_item instanceof Candy && new_candy.isSameAs((Candy) dessert_item)) {
+                    
                     Candy old_candy = (Candy) dessert_item;
-                    if (new_candy.getPricePerPound() == old_candy.getPricePerPound() && old_candy.getName().equals(new_candy.getName())){
-                        double combined_weight = old_candy.getWeight() + new_candy.getWeight();
-                        old_candy.setWeight(combined_weight);
-                        add_item = false;
-                        return;
-                    }
-
-                
+                    double combined_weight = old_candy.getWeight() + new_candy.getWeight();
+                    old_candy.setWeight(combined_weight);
                 }
             }
-            if(add_item = true){
-                order.add(new_candy);
-                Collections.sort(order);
-                return;
-            }
-
-  
         } else if (item instanceof Cookie) {
             Cookie new_cookie = (Cookie) item;
-            boolean add_item = true;
             for (DessertItem dessert_item : order) {
-                if (dessert_item instanceof Cookie) {
-                    if (dessert_item instanceof Cookie ) {
-                        Cookie old_cookie = (Cookie) dessert_item;
-                        if(new_cookie.getPricePerDozen() == old_cookie.getPricePerDozen() && old_cookie.getName().equals(new_cookie.getName())){
-                            int combined_quantity = old_cookie.getQuantity() + new_cookie.getQuantity();
-                            old_cookie.setQuantity(combined_quantity);
-                            return;
-                        }
-
-                    }
-
+                if (dessert_item instanceof Cookie && new_cookie.isSameAs((Cookie) dessert_item)) {
+                    
+                    Cookie old_cookie = (Cookie) dessert_item;
+                    int combined_quantity = old_cookie.getQuantity() + new_cookie.getQuantity();
+                    old_cookie.setQuantity(combined_quantity);
                 }
- 
             }
-            if(add_item = true){
-                order.add(new_cookie);
-                Collections.sort(order);
-                return;
-            }
-
         }
-        else{
-            order.add(item);
-            Collections.sort(order);
-            return;
-        }   
+        order.add(item);
+        Collections.sort(order);
     }
 
     public int itemCount() {

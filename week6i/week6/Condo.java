@@ -43,5 +43,5 @@ public class Condo extends Residential {
         super.setAppraisalPrice(total);
 
         return total;
-    }    
+    }       
 }

@@ -19,9 +19,9 @@ import org.junit.Assert;
 public class HouseTest {
     @Test
     public void testHouseConstructor() {
-        House house = new House("123 Main St", "11111", 1, 1, 1, 1);
+        House house = new House("123 Main St", "sdfgs", 1, 1, 1, 1);
         Assert.assertEquals("123 Main St", house.getStreetAddress());
-        Assert.assertEquals("11111", house.getZip());
+        Assert.assertEquals("sdfgs", house.getZip());
         Assert.assertEquals(1, house.getBedCount());
         Assert.assertEquals(1, house.getBathCount());
         Assert.assertEquals(1, house.getSqFootage());
