@@ -109,6 +109,11 @@ public class DessertShop {
                 choice = sIn.nextLine();
 
                 if (choice.equals("")) {
+                    System.out.print("\nWhat name is this order under? ");
+                    String customerName = sIn.nextLine();
+                    Customer customer = new Customer(customerName);
+                    
+                    customerDB.put(customerName, customer);
                     done = true;
                 } else {
                     switch (choice) {
