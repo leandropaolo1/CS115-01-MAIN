@@ -9,7 +9,7 @@
  */
 
 
-package week7;
+package week8;
 import java.lang.Math;
 import main.SameItem;
 

@@ -10,7 +10,7 @@
  */
 
 
-package week7;
+package week8;
 import main.Packaging;
 
 public abstract class DessertItem implements Packaging, Comparable<DessertItem> {

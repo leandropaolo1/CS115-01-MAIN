@@ -10,7 +10,7 @@
  */
 
 
-package week7;
+package week8;
 
 public class Sundae extends IceCream {
     private String toppingName;

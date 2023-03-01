@@ -9,7 +9,7 @@
  */
 
 
-package week7;
+package week8;
 import main.SameItem;
 
 public class Candy extends DessertItem implements SameItem<Candy> {

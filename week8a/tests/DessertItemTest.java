@@ -13,7 +13,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
-import week7.*;
+import week8.*;
 
 import org.junit.Assert;
 

@@ -13,7 +13,11 @@ package main;
 
 import java.util.Scanner;
 
-import week7.*;
+import people.Customer;
+
+import java.util.HashMap;
+
+import week8.*;
 
 public class DessertShop {
     private static Scanner in = new Scanner(System.in);
@@ -84,6 +88,8 @@ public class DessertShop {
         }
         order.setPayType(payType);
     }
+
+    public static HashMap<String, Customer> customerDB = new HashMap<String, Customer>();
 
     public static void main(String[] args) {
         Scanner sIn = new Scanner(System.in);

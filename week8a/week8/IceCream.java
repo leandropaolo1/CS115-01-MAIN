@@ -9,7 +9,7 @@
  * 
  */
 
-package week7;
+package week8;
 
 public class IceCream extends DessertItem {
     private int scoopCount;
