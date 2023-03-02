@@ -13,12 +13,13 @@ package main;
 
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Map;
 import week8.*;
 import people.*;
 
 public class DessertShop {
     private static Scanner in = new Scanner(System.in);
-    public static HashMap<String, Customer> customerDB = new HashMap<>();
+    public static Map<String, Customer> customerDB = new HashMap<>();
     private static DessertItem userPromptCandy() {
         System.out.print("Enter candy name: ");
         String name = in.nextLine();
@@ -134,8 +135,7 @@ public class DessertShop {
                     }// end of switch (choice)
                 } // end of if (choice.equals(""))
             } // end of while (!done)
-            String order_string = order.toString();
-            System.out.println(order_string);
+
 
             System.out.print("\nName to which order is under: ");
             String input = sIn.nextLine();
@@ -146,15 +146,22 @@ public class DessertShop {
             else{
                 String customerName = input;
                 Customer customer = customerDB.get(customerName);
+                
                 if(customer == null){
+                    System.out.println(customer);
                     customer = new Customer(customerName);
                     customer.addToHistory(order);
                     askPaymentMethod(sIn, order);
-
+                    String order_string = order.toString();
+                    System.out.println(order_string);
+                    customer.toString();
                 }
                 else{
                     customer.addToHistory(order);
                     askPaymentMethod(sIn, order);
+                    String order_string = order.toString();
+                    System.out.println(order_string);
+                    customer.toString();
 
                 }
 

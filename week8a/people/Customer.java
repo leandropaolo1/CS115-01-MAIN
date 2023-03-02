@@ -12,8 +12,8 @@ public class Customer {
     public Customer(String custName) {
         this.custName = custName;
         this.orderHistory = new ArrayList<Order>();
+        nextCustID = nextCustID + 1; // increment nextCustID before assigning it
         this.custID = nextCustID;
-        nextCustID = nextCustID + 1;
     }
 
     public String getName() {
@@ -34,5 +34,18 @@ public class Customer {
 
     public void addToHistory(Order o) {
         orderHistory.add(o);
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        String line = "-----------------------------------------";
+        System.out.println(line);
+        System.out.printf("Customer Name: %-15s Customer ID: %-15d Total Orders: %-5d%n", this.custName, this.custID, this.getOrderHistory().size());
+        sb.append(String.format("\n \n %s", line));
+
+        return sb.toString();
     }
 }
