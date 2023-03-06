@@ -146,15 +146,14 @@ public class DessertShop {
             else{
                 String customerName = input;
                 Customer customer = customerDB.get(customerName);
-                
                 if(customer == null){
-                    System.out.println(customer);
                     customer = new Customer(customerName);
                     customer.addToHistory(order);
                     askPaymentMethod(sIn, order);
                     String order_string = order.toString();
                     System.out.println(order_string);
                     customer.toString();
+                    customerDB.put(customerName,customer);
                 }
                 else{
                     customer.addToHistory(order);
