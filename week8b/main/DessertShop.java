@@ -4,7 +4,7 @@
  * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
  * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
  * Class: 115-01
- * Date: 15-FEB-2023
+ * Date: 28-FEB-2023
  * Assignment: 8b
  * 
  */

@@ -4,8 +4,8 @@
  * Description: DessertItem Test using Junit
  * Lesson Learned: Learned to test an abstract superclass and overridding method with Junit and comparable generics
  * Class: 115-01
- * Date: 15-FEB-2023
- * Assignment: 7a
+ * Date: 28-FEB-2023
+ * Assignment: 8b
  * 
  */
 
