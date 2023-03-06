@@ -5,7 +5,7 @@
  * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
  * Class: 115-01
  * Date: 15-FEB-2023
- * Assignment: 8a
+ * Assignment: 8b
  * 
  */
 
