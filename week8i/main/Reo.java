@@ -50,6 +50,10 @@ public class Reo {
 
         boolean done = false;
         while (!done) {
+            System.out.println("---------------------");
+            System.out.println("------Main Menu------");
+            System.out.println("---------------------");
+
             System.out.println("\n1: Listings");
             System.out.println("2: Bids");
             System.out.print("\nWhat would you like to do? (1-2, Enter for done): ");
@@ -62,6 +66,9 @@ public class Reo {
                     case "1":
                         boolean done1_1 = false;
                         while (!done1_1) {
+                            System.out.println("---------------------");
+                            System.out.println("-----Listing Menu----");
+                            System.out.println("---------------------");
                             System.out.println("\n1: Add Listing");
                             System.out.println("2: Show Listings");
                             System.out.println("3: Auto Populate Listings (DEV Tool)");
@@ -75,6 +82,9 @@ public class Reo {
                                     case "1":
                                         boolean done1_2 = false;
                                         while (!done1_2) {
+                                            System.out.println("---------------------");
+                                            System.out.println("---Add Listing Menu--");
+                                            System.out.println("---------------------");
                                             System.out.println("\n1: Add House");
                                             System.out.println("2: Add Condo");
 
@@ -121,10 +131,13 @@ public class Reo {
                     case "2":
                         boolean done2 = false;
                         while (!done2) {
+                            System.out.println("---------------------");
+                            System.out.println("-----Bidding Menu----");
+                            System.out.println("---------------------");
                             System.out.println("\n1: Add New Bid");
                             System.out.println("2: Show Existing Bids");
                             System.out.println("3: Auto Populate Bids (DEV Tool)");
-                            System.out.print("\nWhat would you like to add to do? (1-4, Enter for done): ");
+                            System.out.print("\nWhat would you like to do? (1-3, Enter for done): ");
                             String choice2 = sIn.nextLine();
 
                             if (choice2.equals("")) {
@@ -144,7 +157,7 @@ public class Reo {
                                         break;
                                     default:
                                         System.out.println(
-                                                "Invalid response:  Please enter a choice from the menu (1-4)");
+                                                "Invalid response:  Please enter a choice from the menu (1-3)");
                                         break;
                                 }
                             }
@@ -152,7 +165,7 @@ public class Reo {
 
                         break;
                     default:
-                        System.out.println("Invalid response:  Please enter a choice from the menu (1-4)");
+                        System.out.println("Invalid response:  Please enter a choice from the menu (1-3)");
                         break;
                 }
             }
