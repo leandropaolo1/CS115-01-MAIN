@@ -18,7 +18,7 @@ import week8.*;
 
 public class Reo {
     private static Scanner in = new Scanner(System.in);
-    public static Map<String, Residential> customerDB = new HashMap<>();
+    public static Map<String, Residential> listingDB = new HashMap<>();
 
     private static void userPromptListings() {
         System.out.print("Enter candy name: ");
@@ -44,7 +44,8 @@ public class Reo {
 
     public static void main(String[] args) {
         Scanner sIn = new Scanner(System.in);
-        String choice;
+        String choice1;
+
         Residential residentialItem;
 
         boolean done = false;
@@ -52,37 +53,62 @@ public class Reo {
             System.out.println("\n1: Listings");
             System.out.println("2: Bids");
             System.out.print("\nWhat would you like to do? (1-2, Enter for done): ");
-            choice = sIn.nextLine();
+            choice1 = sIn.nextLine();
 
-            if (choice.equals("")) {
+            if (choice1.equals("")) {
                 done = true;
             } else {
-                switch (choice) {
+                switch (choice1) {
                     case "1":
-                        boolean done2 = false;
-                        while (!done2) {
+                        boolean done1_1 = false;
+                        while (!done1_1) {
                             System.out.println("\n1: Add Listing");
                             System.out.println("2: Show Listings");
                             System.out.println("3: Auto Populate Listings (DEV Tool)");
                             System.out.print("\nWhat would you like to add to do? (1-4, Enter for done): ");
-                            choice = sIn.nextLine();
+                            String choice1_1 = sIn.nextLine();
 
-                            if (choice.equals("")) {
-                                done2 = true;
+                            if (choice1_1.equals("")) {
+                                done1_1 = true;
                             } else {
-                                switch (choice) {
+                                switch (choice1_1) {
                                     case "1":
-                                        // residentialItem = userPromptListings();
+                                        boolean done1_2 = false;
+                                        while (!done1_2) {
+                                            System.out.println("\n1: Add House");
+                                            System.out.println("2: Add Condo");
 
-                                        System.out.printf("1");
+                                            System.out.print(
+                                                    "\nWhat would you like to add to do? (1-2, Enter for done): ");
+                                            String choice1_1_1 = sIn.nextLine();
+
+                                            if (choice1_1_1.equals("")) {
+                                                done1_2 = true;
+                                            } else {
+                                                switch (choice1_1_1) {
+                                                    case "1":
+                                                        // residentialItem = userPromptListings();
+
+                                                        System.out.println("1-1-1");
+                                                        break;
+                                                    case "2":
+                                                        // residentialItem = userPromptBids();
+                                                        System.out.println("1-1-2");
+                                                        break;
+
+                                                    default:
+                                                        System.out.println(
+                                                                "Invalid response:  Please enter a choice from the menu (1-4)");
+                                                        break;
+                                                }
+                                            }
+                                        }
                                         break;
                                     case "2":
-                                        // residentialItem = userPromptBids();
-                                        System.out.printf("2");
+                                        System.out.println("1-2");
                                         break;
                                     case "3":
-                                        // residentialItem = userPromptBids();
-                                        System.out.printf("3");
+                                        System.out.println("1-3");
                                         break;
                                     default:
                                         System.out.println(
@@ -91,34 +117,30 @@ public class Reo {
                                 }
                             }
                         }
-                        // residentialItem = userPromptListings();
-                        System.out.printf("1-1:3");
                         break;
                     case "2":
-                        boolean done3 = false;
-                        while (!done3) {
-                            System.out.println("\n1: Add Listing");
-                            System.out.println("2: Show Listings");
-                            System.out.println("3: Auto Populate Listings (DEV Tool)");
+                        boolean done2 = false;
+                        while (!done2) {
+                            System.out.println("\n1: Add New Bid");
+                            System.out.println("2: Show Existing Bids");
+                            System.out.println("3: Auto Populate Bids (DEV Tool)");
                             System.out.print("\nWhat would you like to add to do? (1-4, Enter for done): ");
-                            choice = sIn.nextLine();
+                            String choice2 = sIn.nextLine();
 
-                            if (choice.equals("")) {
-                                done3 = true;
+                            if (choice2.equals("")) {
+                                done2 = true;
                             } else {
-                                switch (choice) {
+                                switch (choice2) {
                                     case "1":
-                                        // residentialItem = userPromptListings();
+                                        System.out.println("2_1");
 
-                                        System.out.printf("1");
+
                                         break;
                                     case "2":
-                                        // residentialItem = userPromptBids();
-                                        System.out.printf("2");
+                                        System.out.println("2_2");
                                         break;
                                     case "3":
-                                        // residentialItem = userPromptBids();
-                                        System.out.printf("3");
+                                        System.out.println("2_3");
                                         break;
                                     default:
                                         System.out.println(
@@ -127,8 +149,7 @@ public class Reo {
                                 }
                             }
                         }
-                        // residentialItem = userPromptListings();
-                        System.out.printf("1-1:3");
+
                         break;
                     default:
                         System.out.println("Invalid response:  Please enter a choice from the menu (1-4)");
