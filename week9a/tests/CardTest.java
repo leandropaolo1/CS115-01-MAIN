@@ -53,7 +53,7 @@ public final class CardTest extends JPanel {
 	// Private Data
 	// (You do not need to know anything below this point!)
 	// **********************************************************************
-	private CardTest(PCard card) {
+	public CardTest(PCard card) {
 		this.getFontMetrics(CARD_FONT); // This is a hack to fix a Java font bug
 		this.setPreferredSize(new Dimension(GAME_WIDTH, GAME_HEIGHT));
 		this.setOpaque(true);

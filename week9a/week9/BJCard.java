@@ -2,6 +2,7 @@ package week9;
 
 import java.awt.Color;
 
+
 public class BJCard extends PCard {
     public static final int ACE = 1;
     public static final int TWO = 2;
@@ -112,6 +113,9 @@ public class BJCard extends PCard {
                 break;
         }
 
+
+        // prints the symbol specific to the card suit
+
         String cardSuit = "";
         switch (this.suit) {
             case SPADE:
@@ -131,6 +135,7 @@ public class BJCard extends PCard {
         return cardRank + cardSuit;
     }
 
+    //overide the PC CARD
     @Override
     public Color getFaceColor() {
         if (this.suit == SPADE || this.suit == CLUB) {
@@ -140,33 +145,41 @@ public class BJCard extends PCard {
         }
     }
     
-    /**
-     * Returns the color of the cards background.
-     * Overrides the getBackColor method in PCard.
-     * @return the color of the cards background.
-     */
+    //overide the PC CARD
     @Override
     public Color getBackColor() {
         return Color.WHITE;
     }
+
+    //overide the PC CARD
+    @Override
+    public Color getFontColor() {
+        if (this.suit == SPADE || this.suit == CLUB) {
+            return Color.BLACK;
+        } else {
+            return Color.RED;
+        }
+    }
     
-    /**
-     * Returns the color of an 8 pixel border around the edge of the card.
-     * Overrides the getBorderColor method in PCard.
-     * @return the color of an 8 pixel border around the edge of the card.
-     */
+    //overide the PC CARD
     @Override
     public Color getBorderColor() {
-        return Color.BLACK;
+        if (this.suit == SPADE || this.suit == CLUB) {
+            return Color.BLACK;
+        } else {
+            return Color.RED;
+        }
     }
     
-    /**
-     * Returns the alternative color used on the cards background.
-     * Overrides the getStripeColor method in PCard.
-     * @return the alternative color used on the cards background.
-     */
+    
+    //overide the PC CARD
     @Override
     public Color getStripeColor() {
-        return Color.LIGHT_GRAY;
+        if (this.suit == SPADE || this.suit == CLUB) {
+            return Color.BLACK;
+        } else {
+            return Color.RED;
+        }
     }
+
 }
