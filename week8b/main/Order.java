@@ -104,6 +104,11 @@
          }
          return totalTax;
      }
+
+     public double getTotal(){
+        double orderTotal = this.orderCost() + this.orderTax();
+        return orderTotal;
+     }
  
      @Override
      public PayType getPayType() {

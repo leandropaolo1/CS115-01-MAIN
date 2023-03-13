@@ -122,7 +122,7 @@ public class Reo {
                                         break;
                                     default:
                                         System.out.println(
-                                                "Invalid response:  Please enter a choice from the menu (1-4)");
+                                                "Invalid response:  Please enter a choice from the menu (1-3)");
                                         break;
                                 }
                             }

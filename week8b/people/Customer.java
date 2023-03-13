@@ -28,6 +28,15 @@ public class Customer {
         return orderHistory;
     }
 
+    public Double getOrdersSum(){
+        double orderSum=0;
+        for (Order order : this.orderHistory) {
+            orderSum+=order.getTotal();
+        }
+        return orderSum;
+
+    }
+
     public void setName(String some_name) {
         custName = some_name;
     }
@@ -43,7 +52,7 @@ public class Customer {
         sb.append("\n");
         String line = "-----------------------------------------";
         System.out.println(line);
-        System.out.printf("Customer Name: %-15s Customer ID: %-15d Total Orders: %-5d%n", this.custName, this.custID, this.getOrderHistory().size());
+        System.out.printf("Customer Name: %-5s \nCustomer ID: %-5d \nTotal Orders: %-5d%n", this.custName, this.custID, this.getOrderHistory().size());
         sb.append(String.format("\n \n %s", line));
 
         return sb.toString();
