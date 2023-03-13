@@ -5,7 +5,7 @@
  * Lesson Learned: Learned to test an abstract superclass and overridding method with Junit and comparable generics
  * Class: 115-01
  * Date: 15-FEB-2023
- * Assignment: 7a
+ * Assignment: 7b
  * 
  */
 

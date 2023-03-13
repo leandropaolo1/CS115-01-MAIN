@@ -1,3 +1,14 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Customer Class
+ * Lesson Learned: In this lab, I learned to create the customer class for the sweets shop
+ * Class: 115-01
+ * Date: 15-FEB-2023
+ * Assignment: 7b
+ * 
+ */
+
 package people;
 
 import java.util.ArrayList;

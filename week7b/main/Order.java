@@ -4,7 +4,7 @@
  * Description: Class that implements the java generics and compares order and adds the ones that are the same
  * Lesson Learned: In this lab, I learned to use Generic within a class
  * Date: 15-FEB-2023
- * Assignment: 7a
+ * Assignment: 7b
  * 
  */
 

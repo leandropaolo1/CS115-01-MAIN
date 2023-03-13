@@ -1,3 +1,15 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: Customer Class Test
+ * Lesson Learned: In this lab, I learned to test the customer class
+ * Class: 115-01
+ * Date: 15-FEB-2023
+ * Assignment: 7b
+ * 
+ */
+
+
 package tests;
 
 import org.junit.Assert;
