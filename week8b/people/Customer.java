@@ -6,7 +6,7 @@ import main.Order;
 public class Customer {
     private int custID;
     private String custName;
-    private static int nextCustID = 1000;
+    private static int nextCustID = 999;
     private ArrayList<Order> orderHistory;
 
     public Customer(String custName) {

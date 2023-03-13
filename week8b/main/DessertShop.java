@@ -110,9 +110,12 @@ public class DessertShop {
                 done = true;
             } else {
                 customerAccount = customerDB.get(customerName);
-                System.out.printf("Customer Name: %-10s Customer ID: %d \ns", customerAccount.getName(), customerAccount.getID());
-                for (Order order : customerAccount.getOrderHistory()) {
-                    System.out.println(order.toString());
+                if (customerAccount != null){
+                    System.out.printf("Customer Name: %-10s Customer ID: %d \ns", customerAccount.getName(), customerAccount.getID());
+                    for (Order order : customerAccount.getOrderHistory()) {
+                        System.out.println(order.toString());
+                }
+
                 }
             }
 
@@ -235,7 +238,7 @@ public class DessertShop {
             String input = sIn.nextLine();
 
             if (input.equals("")) {
-                closed = true;
+                closed = false;
             } else {
                 String customerName = input;
                 Customer customer = customerDB.get(customerName);
@@ -248,6 +251,8 @@ public class DessertShop {
                     System.out.println(order_string);
                     customer.toString();
                     customerDB.put(input, customer);
+                    System.out.print("\nHit Enter to Start new Order");
+                    input = sIn.nextLine();
 
                 } else {
                     customer.addToHistory(order);
@@ -255,6 +260,8 @@ public class DessertShop {
                     String order_string = order.toString();
                     System.out.println(order_string);
                     customer.toString();
+                    System.out.print("\nHit Enter to Start new Order");
+                    input = sIn.nextLine();
 
                 }
 
