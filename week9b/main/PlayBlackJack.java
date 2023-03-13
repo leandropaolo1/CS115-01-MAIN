@@ -5,7 +5,7 @@
  * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
  * Class: 115-01
  * Date: 12-MAR-2023
- * Assignment: 9a
+ * Assignment: 9b
  * 
  */
 
@@ -16,8 +16,11 @@ import week9.*;
 
 public class PlayBlackJack {
     public static void main(String[] args) {
-        BJCard ace = new BJCard(1, 2);
-        CardTest cardTest = new CardTest(ace);
-        cardTest.run(ace);
+        // Create a new deck of cards
+        BJDeck deck = new BJDeck();
+
+        // Create a new DeckTest instance and run tests on the deck
+        DeckTest deckTest = new DeckTest(deck);
+        deckTest.run();
     }
 }
