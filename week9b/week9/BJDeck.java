@@ -33,4 +33,28 @@ public class BJDeck implements PDeck {
         boolean empty = this.cards.isEmpty();
         return empty;
     }
+
+    @Override
+    public void addCard(PCard card) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addCard'");
+    }
+
+    @Override
+    public PCard dealCard() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'dealCard'");
+    }
+
+    @Override
+    public PCard dealHiddenCard() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'dealHiddenCard'");
+    }
+
+    @Override
+    public int cardCount() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'cardCount'");
+    }
 }

@@ -1,8 +1,7 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
- * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
+Lesson Learned: We added the admin module to help the desert shop owner * Lesson Learned: How to implement a Admin module and prompts.
  * Class: 115-01
  * Date: 28-FEB-2023
  * Assignment: 8b

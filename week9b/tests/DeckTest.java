@@ -52,7 +52,7 @@ public class DeckTest extends JPanel {
 	// Private Data
 	// (You do not need to know anything below this point!)
 	// **********************************************************************
-	private DeckTest(PDeck deck) {
+	public DeckTest(PDeck deck) {
 		this.getFontMetrics(CARD_FONT); // This is a hack to fix a Java font bug
 		this.setPreferredSize(new Dimension(GAME_WIDTH, GAME_HEIGHT));
 		this.setOpaque(true);

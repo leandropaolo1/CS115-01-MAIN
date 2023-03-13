@@ -21,6 +21,6 @@ public class PlayBlackJack {
 
         // Create a new DeckTest instance and run tests on the deck
         DeckTest deckTest = new DeckTest(deck);
-        deckTest.run();
+        
     }
 }
