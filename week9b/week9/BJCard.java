@@ -1,3 +1,15 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: variables for the black jack cards
+ * Lesson Learned: In this lab, I learned to create java applications
+ * Class: 115-01
+ * Date: 13-MAR-2023
+ * Assignment: 9b
+ * 
+ */
+
+
 package week9;
 
 import java.awt.Color;
@@ -103,18 +115,18 @@ public class BJCard extends PCard {
                 cardRank = "J";
                 break;
             case KNIGHT:
-                cardRank = "N";
+                cardRank = "K";
                 break;
             case QUEEN:
                 cardRank = "Q";
                 break;
             case KING:
-                cardRank = "K";
+                cardRank = "Kn";
                 break;
         }
 
 
-        // prints the symbol specific to the card suit
+        // prints the symbol specific to the card suit, spade, heart, diamond, club
 
         String cardSuit = "";
         switch (this.suit) {
@@ -139,19 +151,17 @@ public class BJCard extends PCard {
     @Override
     public Color getFaceColor() {
         if (this.suit == SPADE || this.suit == CLUB) {
-            return Color.BLACK;
+            return Color.WHITE;
         } else {
             return Color.WHITE;
         }
     }
     
-    //overide the PC CARD
     @Override
     public Color getBackColor() {
         return Color.WHITE;
     }
 
-    //overide the PC CARD
     @Override
     public Color getFontColor() {
         if (this.suit == SPADE || this.suit == CLUB) {
@@ -161,7 +171,6 @@ public class BJCard extends PCard {
         }
     }
     
-    //overide the PC CARD
     @Override
     public Color getBorderColor() {
         if (this.suit == SPADE || this.suit == CLUB) {
@@ -172,7 +181,6 @@ public class BJCard extends PCard {
     }
     
     
-    //overide the PC CARD
     @Override
     public Color getStripeColor() {
         if (this.suit == SPADE || this.suit == CLUB) {
