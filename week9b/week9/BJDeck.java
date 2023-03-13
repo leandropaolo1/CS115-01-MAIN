@@ -1,60 +1,70 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: how to add the black jack cards all 14x4 cards
+ * Lesson Learned: In this lab, I learned to create java applications
+ * Class: 115-01
+ * Date: 13-MAR-2023
+ * Assignment: 9b
+ * 
+ */
+
+
 package week9;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class BJDeck implements PDeck {
 
     private ArrayList<BJCard> cards;
+    
 
+    //basically just iterates through a list to go 14x4
     public BJDeck() {
         this.cards = new ArrayList<BJCard>();
-        for (int i = 1; i <= 13; i++) {
+        for (int i = 1; i <= 14; i++) {
             for (int j = 1; j <= 4; j++) {
                 BJCard card = new BJCard(i, j);
                 this.cards.add(card);
             }
         }
+        
     }
 
+
+    @Override
     public void shuffle() {
-    }
-
-    public BJCard draw() {
-        BJCard card = this.cards.remove(0);
-        return card;
-    }
-
-    public int size() {
-        int size = this.cards.size();
-        return size;
-    }
-
-    public boolean isEmpty() {
-        boolean empty = this.cards.isEmpty();
-        return empty;
+        Collections.shuffle(this.cards);
     }
 
     @Override
     public void addCard(PCard card) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addCard'");
+        this.cards.add((BJCard) card);
     }
 
     @Override
     public PCard dealCard() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dealCard'");
+        if (this.cards.isEmpty()) {
+            return null;
+        } else {
+            return this.cards.remove(this.cards.size() - 1);
+        }
     }
 
     @Override
     public PCard dealHiddenCard() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dealHiddenCard'");
+        if (this.cards.isEmpty()) {
+            return null;
+        } else {
+            BJCard card = this.cards.remove(this.cards.size() - 1);
+            return card;
+        }
     }
 
     @Override
     public int cardCount() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cardCount'");
+        return this.cards.size();
     }
 }

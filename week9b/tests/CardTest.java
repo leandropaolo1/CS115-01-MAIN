@@ -26,7 +26,7 @@ import week9.*;
  * @Minor modifications by Jeff Light
  * @since 2019-11-01
  */
-public final class CardTest extends JPanel {
+public class CardTest extends JPanel {
 
 	/**
 	 * Display a playing card in a window.
