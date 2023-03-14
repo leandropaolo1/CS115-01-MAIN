@@ -1,27 +1,23 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: We have added The comparable  interface to Dessert Item and also added a method that compares DessertItem object
- * Lesson Learned: In this lab, I learned to add the Comparable iterface and compare and how to arrange them
+ * Lesson Learned:
+I  created an interface and a class that implements the interface to store the list of residential properties that our Real Estate Office has listed for sale. This will allow us to keep track of all the properties that we are currently under contract to sell. 
  * Class: 115-01
- * Date: 12-MAR-2023
- * Assignment: 8i
+ * Date: 13-MAR-2023
+ * Assignment: 9i
  * 
  */
 
 package main;
 
 import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
 import week9.*;
 
 public class Reo {
-    private static Scanner in = new Scanner(System.in);
     private static Listings listings = new Listings();
 
     public static void listingAutoPopulate(){
-        int currentSize = listings.getListings().size();
         House house1 = new House("34 Elm","95129", 3, 2, 2200, .2);
         house1.setListPrice(house1.calculateAppraisalPrice() * 1.1);
         listings.addListing("34 Elm", house1);
@@ -46,6 +42,9 @@ public class Reo {
         House house5 = new House("1220 Apple", "84057", 8, 7, 7900, 1);
         house5.setListPrice(house5.calculateAppraisalPrice() * 1.1);
         listings.addListing("1220 Apple", house5);
+
+        System.out.print("\nListing has been auto-populated \n ");
+
     }
 
     private static void userPromptAddCondo(Scanner scanner) {

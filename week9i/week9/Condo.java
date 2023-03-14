@@ -2,10 +2,9 @@
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
  * Lesson Learned:
- * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
- * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
+I  created an interface and a class that implements the interface to store the list of residential properties that our Real Estate Office has listed for sale. This will allow us to keep track of all the properties that we are currently under contract to sell. 
  * Class: 115-01
- * Date: 12-MAR-2023
+ * Date: 13-MAR-2023
  * Assignment: 9i
  * 
  */
@@ -13,12 +12,10 @@ package week9;
 
 public class Condo extends Residential {
     private int floorLevel;
-    private double listingPrice;
 
     public Condo() {
         super();
         this.floorLevel = 0;
-        this.listingPrice = 0.0;
 
     }
 
@@ -34,9 +31,14 @@ public class Condo extends Residential {
     public void setFloorLevel(int floorLevel) {
         this.floorLevel= floorLevel;
     }
+
+
+    
+    @Override
     public void setListPrice(double listingPrice){
-        this.listingPrice = listingPrice;
+        super.setListPrice(listingPrice);
     }
+
     @Override
     public int calculateAppraisalPrice(){
         int square_foot = super.getSqFootage();
@@ -52,17 +54,17 @@ public class Condo extends Residential {
 
     @Override
     public String toString() {
-        String output = "";
-        output += "-------------------------------------------------------------------------------------------------------\n";
-        output += "Residence Type: Condo           Address: " + super.getStreetAddress() + "           Zip Code: " + super.getZip() + "\n";
-        output += "-------------------------------------------------------------------------------------------------------\n";
-        output += "Sq Footage: " + super.getSqFootage() + "\n";
-        output += "Bedrooms: " + super.getBedCount() + "\n";
-        output += "Bathrooms: " + super.getBathCount() + "\n";
-        output += "------------------------------------------\n";
-        output += "Appraisal Price: $" + String.format("%,.2f", (double)super.getAppraisalPrice()) + "\n";
-        output += "List Price: $0.00\n";
-        output += "------------------------------------------\n";
-        return output;
+        StringBuilder sb = new StringBuilder();
+        sb.append("-------------------------------------------------------------------------------------------------------\n");
+        sb.append("Residence Type: Condo | Address: ").append(super.getStreetAddress()).append(" | Zip Code: ").append(super.getZip()).append("\n");
+        sb.append("-------------------------------------------------------------------------------------------------------\n");
+        sb.append("Sq Footage: ").append(super.getSqFootage()).append("\n");
+        sb.append("Bedrooms: ").append(super.getBedCount()).append("\n");
+        sb.append("Bathrooms: ").append(super.getBathCount()).append("\n");
+        sb.append("------------------------------------------\n");
+        sb.append("Appraisal Price: $").append(String.format("%,.2f", (double) super.getAppraisalPrice())).append("\n");
+        sb.append("List Price: $").append(String.format("%,.2f", (double) super.getListPrice())).append("\n");
+        sb.append("------------------------------------------\n");
+        return sb.toString();
     }
 }

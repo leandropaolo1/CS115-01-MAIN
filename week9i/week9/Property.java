@@ -2,10 +2,9 @@
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
  * Lesson Learned:
- * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
- * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
+I created an interface and a class that implements the interface to store the list of residential properties that our Real Estate Office has listed for sale. This will allow us to keep track of all the properties that we are currently under contract to sell. 
  * Class: 115-01
- * Date: 12-MAR-2023
+ * Date: 13-MAR-2023
  * Assignment: 9i
  * 
  */
@@ -14,8 +13,8 @@ package week9;
 public abstract class Property {
     private String streetAddress;
     private String zip;
-    private int listPrice=0;
-    private int appraisalPrice=0;
+    private double listPrice=0.0;
+    private double appraisalPrice=0.0;
 
     public Property(String streetAddress, String zip) {
         this.streetAddress = streetAddress;
@@ -44,22 +43,23 @@ public abstract class Property {
         this.zip = zip;
     }
 
-    public int getListPrice() {
-        return listPrice;
+    public double getAppraisalPrice(){
+        return this.appraisalPrice;
     }
 
-    public void setListPrice(int listPrice){
-        this.listPrice = listPrice;
-    }
-
-    public int getAppraisalPrice() {
-        return appraisalPrice;
-    }
 
     protected void setAppraisalPrice(int appraisalPrice) {
         this.appraisalPrice = appraisalPrice;
     }
+    
+    public double getListPrice(){
+        return this.listPrice;
+    }
+
 
     public abstract int calculateAppraisalPrice();
 
+    public void setListPrice(double listingPrice) {
+        this.listPrice = listingPrice;
+    }
 }

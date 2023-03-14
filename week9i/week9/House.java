@@ -2,10 +2,9 @@
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
  * Lesson Learned:
- * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
- * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
+I  created an interface and a class that implements the interface to store the list of residential properties that our Real Estate Office has listed for sale. This will allow us to keep track of all the properties that we are currently under contract to sell. 
  * Class: 115-01
- * Date: 12-MAR-2023
+ * Date: 13-MAR-2023
  * Assignment: 9i
  * 
  */
@@ -15,12 +14,10 @@ import java.lang.Math;
 
 public class House extends Residential {
     private double yardAcres;
-    private double listingPrice;
 
     public House() {
         super();
         this.yardAcres = 0.0;
-        this.listingPrice = 0.0;
     }
 
     public House(
@@ -43,8 +40,9 @@ public class House extends Residential {
         this.yardAcres = yardAcres;
     }
 
+    @Override
     public void setListPrice(double listingPrice){
-        this.listingPrice = listingPrice;
+        super.setListPrice(listingPrice);
     }
 
     @Override
@@ -63,7 +61,7 @@ public class House extends Residential {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("-------------------------------------------------------------------------------------------------------\n");
-        sb.append("Residence Type: House           Address: ").append(super.getStreetAddress()).append("           Zip Code: ").append(super.getZip()).append("\n");
+        sb.append("Residence Type: House | Address: ").append(super.getStreetAddress()).append("| Zip Code: ").append(super.getZip()).append("\n");
         sb.append("-------------------------------------------------------------------------------------------------------\n");
         sb.append("Sq Footage: ").append(super.getSqFootage()).append("\n");
         sb.append("Bedrooms: ").append(super.getBedCount()).append("\n");
