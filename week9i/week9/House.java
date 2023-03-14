@@ -45,7 +45,23 @@ public class House extends Residential {
 
         return total;
     }
-
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("-------------------------------------------------------------------------------------------------------\n");
+        sb.append("Residence Type: House           Address: ").append(super.getStreetAddress()).append("           Zip Code: ").append(super.getZip()).append("\n");
+        sb.append("-------------------------------------------------------------------------------------------------------\n");
+        sb.append("Sq Footage: ").append(super.getSqFootage()).append("\n");
+        sb.append("Bedrooms: ").append(super.getBedCount()).append("\n");
+        sb.append("Bathrooms: ").append(super.getBathCount()).append("\n");
+        sb.append("Yard Size (Acres): ").append(this.yardAcres).append("\n");
+        sb.append("------------------------------------------\n");
+        sb.append("Appraisal Price: $").append(String.format("%,.2f", (double) super.getAppraisalPrice())).append("\n");
+        sb.append("List Price: $").append(String.format("%,.2f", (double) super.getListPrice())).append("\n");
+        sb.append("------------------------------------------\n");
+        return sb.toString();
+    }
 }
 
 

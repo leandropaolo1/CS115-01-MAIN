@@ -44,4 +44,20 @@ public class Condo extends Residential {
 
         return total;
     }       
+
+    @Override
+    public String toString() {
+        String output = "";
+        output += "-------------------------------------------------------------------------------------------------------\n";
+        output += "Residence Type: Condo           Address: " + super.getStreetAddress() + "           Zip Code: " + super.getZip() + "\n";
+        output += "-------------------------------------------------------------------------------------------------------\n";
+        output += "Sq Footage: " + super.getSqFootage() + "\n";
+        output += "Bedrooms: " + super.getBedCount() + "\n";
+        output += "Bathrooms: " + super.getBathCount() + "\n";
+        output += "------------------------------------------\n";
+        output += "Appraisal Price: $" + String.format("%,.2f", (double)super.getAppraisalPrice()) + "\n";
+        output += "List Price: $0.00\n";
+        output += "------------------------------------------\n";
+        return output;
+    }
 }
