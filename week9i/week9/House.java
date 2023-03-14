@@ -15,15 +15,24 @@ import java.lang.Math;
 
 public class House extends Residential {
     private double yardAcres;
+    private double listingPrice;
 
     public House() {
         super();
         this.yardAcres = 0.0;
+        this.listingPrice = 0.0;
     }
 
-    public House(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, double yardAcres) {
+    public House(
+        String streetAddress,
+        String zip,
+        int bedCount,
+        int bathCount,
+        int sqFootage,
+        double yardAcres) {
         super(streetAddress, zip, bedCount, bathCount, sqFootage);
         this.yardAcres = yardAcres;
+        
     }
 
     public double getYardAcres() {
@@ -32,6 +41,10 @@ public class House extends Residential {
 
     public void setYardAcres(double yardAcres) {
         this.yardAcres = yardAcres;
+    }
+
+    public void setListPrice(double listingPrice){
+        this.listingPrice = listingPrice;
     }
 
     @Override
@@ -45,7 +58,7 @@ public class House extends Residential {
 
         return total;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

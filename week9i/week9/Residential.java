@@ -56,4 +56,6 @@ public abstract class Residential extends Property {
 
     public abstract int calculateAppraisalPrice();
 
+
+
 }

@@ -13,10 +13,13 @@ package week9;
 
 public class Condo extends Residential {
     private int floorLevel;
+    private double listingPrice;
 
     public Condo() {
         super();
         this.floorLevel = 0;
+        this.listingPrice = 0.0;
+
     }
 
     public Condo(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, int floorLevel) {
@@ -31,7 +34,9 @@ public class Condo extends Residential {
     public void setFloorLevel(int floorLevel) {
         this.floorLevel= floorLevel;
     }
-
+    public void setListPrice(double listingPrice){
+        this.listingPrice = listingPrice;
+    }
     @Override
     public int calculateAppraisalPrice(){
         int square_foot = super.getSqFootage();
