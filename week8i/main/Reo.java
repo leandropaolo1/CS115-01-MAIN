@@ -20,27 +20,6 @@ public class Reo {
     private static Scanner in = new Scanner(System.in);
     public static Map<String, Residential> listingDB = new HashMap<>();
 
-    private static void userPromptListings() {
-        System.out.print("Enter candy name: ");
-        String name = in.nextLine();
-        System.out.print("Enter weight in pounds: ");
-        double weight = in.nextDouble();
-        in.nextLine(); // consume the line break
-        System.out.print("Enter price per pound: ");
-        double pricePerPound = in.nextDouble();
-        in.nextLine(); // consume the line break
-    }
-
-    private static void userPromptBids() {
-        System.out.print("Enter cookie name: ");
-        String name = in.nextLine();
-        System.out.print("Enter number of cookies: ");
-        int number = in.nextInt();
-        in.nextLine(); // consume the line break
-        System.out.print("Enter price per dozen: ");
-        double pricePerDozen = in.nextDouble();
-        in.nextLine(); // consume the line break
-    }
 
     public static void main(String[] args) {
         Scanner sIn = new Scanner(System.in);
