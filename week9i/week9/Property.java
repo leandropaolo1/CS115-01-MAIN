@@ -40,8 +40,13 @@ public abstract class Property {
     }
 
     public void setZip(String zip) {
-        this.zip = zip;
-    }
+        if (zip != null && zip.matches("^\\d{5}(-\\d{4})?$") && Integer.parseInt(zip) > 0) {
+            this.zip = zip;
+            } else {
+            throw new IllegalArgumentException("Invalid zip code. Zip code must be a positive number.");
+            }
+        }    
+        
 
     public double getAppraisalPrice(){
         return this.appraisalPrice;
