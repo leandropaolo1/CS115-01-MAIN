@@ -22,6 +22,8 @@ public class Condo extends Residential {
     public Condo(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, int floorLevel) {
         super(streetAddress, zip, bedCount, bathCount, sqFootage);
         this.floorLevel = floorLevel;
+        calculateAppraisalPrice();
+
     }
 
     public int getFloorLevel() {

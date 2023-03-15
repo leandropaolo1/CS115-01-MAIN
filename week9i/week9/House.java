@@ -29,6 +29,7 @@ public class House extends Residential {
         double yardAcres) {
         super(streetAddress, zip, bedCount, bathCount, sqFootage);
         this.yardAcres = yardAcres;
+        calculateAppraisalPrice();
         
     }
 
