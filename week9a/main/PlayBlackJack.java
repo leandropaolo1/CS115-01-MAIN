@@ -19,31 +19,21 @@ public class PlayBlackJack {
         BJCard card1 = new BJCard(1, 1);
         BJCard card2 = new BJCard(6, 2);
 
-        CardTest cardTest = new CardTest(card1);
-        cardTest.run(card1);
-
-        CardTest cardTest2 = new CardTest(card2);
-        cardTest2.run(card2);
-
+        CardTest.run(card1);
+        CardTest.run(card2);
 
 
         BJCard card3 = new BJCard(10, 1);
         BJCard card4 = new BJCard(14, 2);
 
-        CardTest cardTest3 = new CardTest(card3);
-        cardTest.run(card3);
-
-        CardTest cardTest4 = new CardTest(card4);
-        cardTest2.run(card4);
+        CardTest.run(card3);
+        CardTest.run(card4);
 
 
         BJCard card5 = new BJCard(13, 3);
         BJCard card6 = new BJCard(12, 4);
 
-        CardTest cardTest5 = new CardTest(card5);
-        cardTest.run(card5);
-
-        CardTest cardTest6 = new CardTest(card6);
-        cardTest2.run(card6);
+        CardTest.run(card5);
+        CardTest.run(card6);
     }
 }
