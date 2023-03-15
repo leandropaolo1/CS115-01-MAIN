@@ -1,11 +1,11 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Description: variables for the black jack cards, we printed or showed cards that summed 21
+ * Description: variables for the black jack cards, we printed or showed cards and ran PGame
  * Lesson Learned: In this lab, I learned to create java applications
  * Class: 115-01
  * Date: 14-MAR-2023
- * Assignment: 10a
+ * Assignment: 10b
  * 
  */
 

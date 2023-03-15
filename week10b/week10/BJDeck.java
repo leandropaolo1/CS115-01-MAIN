@@ -59,6 +59,7 @@ public class BJDeck implements PDeck {
             return null;
         } else {
             BJCard card = this.cards.remove(this.cards.size() - 1);
+            card.hideCard();
             return card;
         }
     }
