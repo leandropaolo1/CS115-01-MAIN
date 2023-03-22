@@ -1,3 +1,14 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: In this program, we have updated the code to resolve all underlying bugs.
+ * Lesson Learned: I learned how to use eclipse's debugger tool to find and patch the underlying bugs.
+ * Class: 115-01
+ * Date: 22-MAR-2023
+ * Assignment: 11a
+ * 
+ */
+
 /**
  * Interface: Modifiable.
  * Assignment: Lab10a - Debugging ToDo.

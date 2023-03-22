@@ -1,3 +1,15 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: In this program, we have updated the code to resolve all underlying bugs.
+ * Lesson Learned: I learned how to use eclipse's debugger tool to find and patch the underlying bugs.
+ * Class: 115-01
+ * Date: 22-MAR-2023
+ * Assignment: 11a
+ * 
+ */
+
+
 /**
  * Class: Planner.
  * @author jeffreylight
@@ -59,7 +71,7 @@ public class Planner {
 			switch (choice) {
 				case "1":			
 					viewModule(sIn);
-					break;
+					break; 
 				case "2":			
 					createModule(sIn);
 					break;
@@ -115,6 +127,7 @@ public class Planner {
 		p2.add("Water Bottle", 7);
 		p2.add("Shoe Inserts", 4);
 		p2.add("Snacks", 24);
+		
 		
 		ShoppingPlan s2 = new ShoppingPlan("Home Depot", "Home Improvement");
 		s2.add("1 1/2 in. Screws", 100);
@@ -195,7 +208,7 @@ public class Planner {
 			switch (choice) {
 				case "1":			
 					addPlan(sIn, "Packing");
-					//break;
+					break;
 				case "2":			
 					addPlan(sIn, "Shopping");
 					break;
@@ -226,7 +239,7 @@ public class Planner {
 			System.out.print("Please enter the type of trip being planned: ");
 			String tripType = sIn.nextLine();			
 			int travelers = getValidInt(sIn, "Please enter the number of travelers for this trip: ", "Invalid entry.  Number of travelers must be a whole number.");
-			PackingPlan packingPlan = new PackingPlan(planTitle, tripType, travelers, destination);
+			PackingPlan packingPlan = new PackingPlan(planTitle, destination, travelers, tripType );
 			plans.add(packingPlan);
 			System.out.printf("\nThe '%s' Packing Plan has been created and is ready for update.\n",packingPlan.getTitle());
 		} else if(planType.equalsIgnoreCase("Shopping")) {
@@ -234,7 +247,7 @@ public class Planner {
 			String shoppingType = sIn.nextLine();		
 			ShoppingPlan shoppingPlan = new ShoppingPlan(planTitle, shoppingType);
 			plans.add(shoppingPlan);
-			System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",shoppingPlan);		
+			System.out.printf("\nThe '%s' Shopping Plan has been created and is ready for update.\n",shoppingPlan.getTitle());		
 		}//end of(type.equalsIgnoreCase("Packing"))		
 	}//end of method addPlan
 	
@@ -350,7 +363,7 @@ public class Planner {
 	public static void deleteItem(Scanner sIn, ToDo plan) {
 		//Get the list of items (keys) from the plan HashMap and convert the Set<String> to an array String[].
 		Set<String> itemList = plan.getItems();		//Get the Set<String> of keys from the HashMap.
-		int setSize = itemList.size()-1;			//Find the number of items in the HashMap.
+		int setSize = itemList.size();			//Find the number of items in the HashMap.
 		String[] choices = new String[setSize];		//Create a new array String[] that is the same size as the HashMap.
 		
 		int index = 0;								//Load the new String[] array with the items (keys) from the HashMap.
@@ -387,10 +400,10 @@ public class Planner {
 			menuMap.clear();	//Empty the menu map for the next menu creation.
 			
 			cmd = 1;			//Load the menu map with menu option numbers associated with each plan in the plans ArrayList and print these to the console.
-			for(ToDo plan : plans) {
-				menuMap.put(Integer.toString(cmd), plan);
-				System.out.printf("%d:  %-28s (%d)\n",cmd, plan.getTitle(), plan.getToDoID());
-				cmd++;
+			for (int i = 0; i < plans.size(); i++) {
+			    ToDo plan = plans.get(i);
+			    menuMap.put(Integer.toString(i + 1), plan);
+			    System.out.printf("%d:  %-28s (%d)\n", i + 1, plan.getTitle(), i + 1);
 			}//end of for(ToDo plan : plans)
 			System.out.printf("ENTER: Exit back to previous menu\n\n");				
 			System.out.print("Which plan?: ");			

@@ -1,3 +1,14 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: In this program, we have updated the code to resolve all underlying bugs.
+ * Lesson Learned: I learned how to use eclipse's debugger tool to find and patch the underlying bugs.
+ * Class: 115-01
+ * Date: 22-MAR-2023
+ * Assignment: 11a
+ * 
+ */
+
 /**
  * Module: PackingPlan.
  * Assignment: Lab10a - Debugging ToDo.
@@ -195,7 +206,13 @@ public class PackingPlan extends ToDo {
 	 */	
 	public void change(String item, int change) {
 		int current = gear.get(item);
-		gear.put(item, current + change);
+		int sum = current + change;
+		gear.put(item, sum);
+		
+		if (sum < 0) {
+			gear.remove(item);
+			
+		}
 	}//end of method change(String, int)
 	
 	/**

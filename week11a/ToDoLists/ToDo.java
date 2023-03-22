@@ -1,3 +1,14 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: In this program, we have updated the code to resolve all underlying bugs.
+ * Lesson Learned: I learned how to use eclipse's debugger tool to find and patch the underlying bugs.
+ * Class: 115-01
+ * Date: 22-MAR-2023
+ * Assignment: 11a
+ * 
+ */
+
 /**
  * Module: ToDo.
  * Assignment: Lab10a - Debugging ToDo.
@@ -18,7 +29,9 @@ import java.util.Set;
  * @author jeffreylight
  * @since 11/17/2019
  */
-public abstract class ToDo implements Modifiable{
+
+
+ public abstract class ToDo implements Modifiable{
 	//Attributes
 	private String title;				//Title of the ToDo plan
 	private int toDoID;					//ID of the ToDo plan
