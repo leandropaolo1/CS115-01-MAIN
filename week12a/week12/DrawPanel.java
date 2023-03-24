@@ -66,7 +66,6 @@ protected void paintComponent(Graphics g) {
     int[] yPointsPent = {250, 250, 325, 400, 325};
     g2d.fillPolygon(xPointsPent, yPointsPent, 5);
 
-    // Move the last 6 shapes 100 points to the right and 100 points down
     g2d.setColor(Color.BLACK);
     g2d.setStroke(new BasicStroke(5));
     g2d.drawOval(150, 300, 100, 100);
