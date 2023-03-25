@@ -1,3 +1,15 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: The tree program draws shapes with fill and no fill
+ * Lesson Learned: In this lab, I learned how to create shapes using Java programming language.
+ * I learned how to use basic graphics concepts.
+ * Class: 115-01
+ * Date: 24-MAR-2023
+ * Assignment: 12b
+ * 
+ */
+
 package week12;
 
 import java.awt.BasicStroke;
@@ -5,11 +17,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Polygon;
-import java.awt.RenderingHints;
-import java.awt.Stroke;
 import javax.swing.JPanel;
-import java.awt.geom.*;
 
 /**
  * Class used to create a DrawPanel where shapes will be drawn by the programmer (via code).

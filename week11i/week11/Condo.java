@@ -9,29 +9,27 @@
  * AssignmentL 8i
  * 
  */
-package week8;
-import java.lang.Math;
+package week11;
 
+public class Condo extends Residential {
+    private int floorLevel;
 
-public class House extends Residential {
-    private double yardAcres;
-
-    public House() {
+    public Condo() {
         super();
-        this.yardAcres = 0.0;
+        this.floorLevel = 0;
     }
 
-    public House(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, double yardAcres) {
+    public Condo(String streetAddress, String zip, int bedCount, int bathCount, int sqFootage, int floorLevel) {
         super(streetAddress, zip, bedCount, bathCount, sqFootage);
-        this.yardAcres = yardAcres;
+        this.floorLevel = floorLevel;
     }
 
-    public double getYardAcres() {
-        return yardAcres;
+    public int getFloorLevel() {
+        return floorLevel;
     }
 
-    public void setYardAcres(double yardAcres) {
-        this.yardAcres = yardAcres;
+    public void setFloorLevel(int floorLevel) {
+        this.floorLevel= floorLevel;
     }
 
     @Override
@@ -39,13 +37,11 @@ public class House extends Residential {
         int square_foot = super.getSqFootage();
         int bedrooms = super.getBedCount();
         int bathrooms = super.getBathCount();
-        int fullAcre = (int)Math.round(this.yardAcres);
-        int total = (square_foot * 97) + (10_000 * bedrooms) + (12_000 * bathrooms) + (46_000 * fullAcre);
+        int fullFloor = (int)Math.round(this.floorLevel);
+        int total = (square_foot * 88) + (8_000 * bedrooms) + (10_000 * bathrooms) + (5_000 * fullFloor);
+        
         super.setAppraisalPrice(total);
 
         return total;
-    }
-
+    }       
 }
-
-
