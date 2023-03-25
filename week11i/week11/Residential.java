@@ -8,7 +8,7 @@ I created an interface and a class that implements the interface to store the li
  * Assignment: 9i
  * 
  */
-package week9;
+package week11;
 
 public abstract class Residential extends Property {
     private int bedCount;
