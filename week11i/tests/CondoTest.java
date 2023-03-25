@@ -2,18 +2,17 @@
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
  * Lesson Learned:
- * In this lab, I learned how to build Java superclasses and subclasses and overload methods with multiple signatures.
- * I also built a project with 3 levels in the Hierarchy and created JUnit test cases.
+I created an interface and a class that implements the interface to store the list of residential properties that our Real Estate Office has listed for sale. This will allow us to keep track of all the properties that we are currently under contract to sell. 
  * Class: 115-01
- * Date: 06-MAR-2023
- * AssignmentL 8i
+ * Date: 13-MAR-2023
+ * Assignment: 9i
  * 
  */
 package tests;
 
 import org.junit.jupiter.api.Test;
 
-import week8.*;
+import week9.*;
 
 import org.junit.Assert;
 
@@ -70,8 +69,7 @@ public class CondoTest {
         int expected_total = (square_foot * 88) + (8_000 * bedrooms) + (10_000 * bathrooms) + (5_000 * fullFloor);
         
         condo.calculateAppraisalPrice();
-        Assert.assertEquals(expected_total, condo.getAppraisalPrice());
-
+        Assert.assertEquals(expected_total, condo.getAppraisalPrice(), 0.1);
     }
     
 }
