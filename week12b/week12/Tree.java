@@ -1,3 +1,16 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: The tree program draws a green tree with brown trunk and multiple layers of branches made of triangles pointing upwards.
+ * The tree's size and number of layers can be adjusted using the program's settings.
+ * Lesson Learned: In this lab, I learned how to create a tree shape using Java programming language.
+ * I learned how to use basic graphics concepts.
+ * Class: 115-01
+ * Date: 24-MAR-2023
+ * Assignment: 12b
+ * 
+ */
+
 package week12;
 
 
@@ -69,6 +82,7 @@ public class Tree extends LandscapeObject{
 		applyScale();
 		drawTrunk();
 		drawBranches();
+
 	}
 
 	public void applyScale() {
@@ -80,49 +94,41 @@ public class Tree extends LandscapeObject{
 	}//end 
 
 	private void drawBranches() {
-		// Save current stroke and color
 		BasicStroke previousStroke = (BasicStroke) g2.getStroke();
 		Color previousColor = g2.getColor();
-	
-		// Set stroke and color for branches
 		g2.setStroke(treeStroke);
 		g2.setColor(Color.decode(branchColor));
-	
-		// Draw each branch triangle
 		int triangleX = currentX;
 		int triangleY = currentY - trunkHeight;
 		int triangleWidth = branchWidth;
 		int triangleHeight = branchHeight;
 	
-		for (int i = 0; i < levels; i++) {
-			// Draw triangle
+		for (int i = 0; i < this.levels; i++) {
 			g2.fillPolygon(new int[] { triangleX, triangleX - (triangleWidth / 2), triangleX + (triangleWidth / 2) },
-				new int[] { triangleY, triangleY - triangleHeight, triangleY - triangleHeight }, 3);
+					new int[] { triangleY, triangleY + triangleHeight, triangleY + triangleHeight }, 3);
+			g2.setColor(Color.BLACK);
+			g2.drawPolygon(new int[] { triangleX, triangleX - (triangleWidth / 2), triangleX + (triangleWidth / 2) },
+					new int[] { triangleY, triangleY + triangleHeight, triangleY + triangleHeight }, 3);
+			g2.setColor(Color.decode(branchColor));
 	
-			// Adjust triangle dimensions for next level
 			triangleY -= (int) (branchOverlap * triangleHeight);
-			triangleHeight = (int) (triangleHeight * (1 - branchOverlap));
-			triangleWidth = (int) (triangleWidth * (1 - branchOverlap));
+	
 		}
 	
-		// Restore previous stroke and color
 		g2.setStroke(previousStroke);
 		g2.setColor(previousColor);
-	
 	}
+	
+	
 	private void drawTrunk() {
-		// Save current stroke and color
 		BasicStroke previousStroke = (BasicStroke) g2.getStroke();
 		Color previousColor = g2.getColor();
-	
-		// Set stroke and color for trunk
 		g2.setStroke(treeStroke);
 		g2.setColor(Color.decode(trunkColor));
-	
-		// Draw trunk rectangle
-		g2.fillRect(currentX - (trunkWidth / 2), currentY, trunkWidth, -trunkHeight);
-	
-		// Restore previous stroke and color
+		int yOffset = (int) (15 * super.getScale());
+		int trunkX = currentX - (trunkWidth / 2);
+		int trunkY = currentY - (trunkHeight / 2) + yOffset; // Move trunk down by the offset
+		g2.fillRect(trunkX, trunkY, trunkWidth, trunkHeight);
 		g2.setStroke(previousStroke);
 		g2.setColor(previousColor);
 	}

@@ -1,3 +1,18 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Description: The tree program draws a green tree with brown trunk and multiple layers of branches made of triangles pointing upwards.
+ * The tree's size and number of layers can be adjusted using the program's settings.
+ * Lesson Learned: In this lab, I learned how to create a tree shape using Java programming language.
+ * I learned how to use basic graphics concepts.
+ * Class: 115-01
+ * Date: 24-MAR-2023
+ * Assignment: 12b
+ * 
+ */
+
+
+
 package main;
 import week12.*;
 import java.awt.Color;
@@ -65,13 +80,13 @@ public class DrawPanel extends JPanel {
 		g2.fillOval((-600), 350, this.getWidth() + 1200, 700);
 		
 		//DrawTree Trees
-		Tree t1 = new Tree(g2, 50, 400, 2, 3, BROWN , DARK_GREEN);
+		Tree t1 = new Tree(g2, 50, 400, 1, 3, BROWN , DARK_GREEN);
 		t1.draw();
 		
 		Tree t2 = new Tree(g2, 200, 375, 2, 5, BROWN , GRAY);
 		t2.draw();
 		
-		Tree t3 = new Tree(g2, 300, 450, 2, 4, BROWN , FOREST_GREEN);
+		Tree t3 = new Tree(g2, 300, 450, 3, 4, BROWN , FOREST_GREEN);
 		t3.draw();
 		
 		
