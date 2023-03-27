@@ -12,26 +12,30 @@ I  created an interface and a class that implements the interface to store the l
 package main;
 
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import week11.*;
 
 public class Reo {
     private static Listings listings = new Listings();
 
-    public static void listingAutoPopulate(){
-        House house1 = new House("34 Elm","95129", 3, 2, 2200, .2);
+    public static void listingAutoPopulate() {
+        House house1 = new House("34 Elm", "95129", 3, 2, 2200, .2);
         house1.setListPrice(house1.calculateAppraisalPrice() * 1.1);
         listings.addListing("34 Elm", house1);
-        House house2 = new House("42 Hitchhikers","95136", 4, 3, 2800, .3);
+        House house2 = new House("42 Hitchhikers", "95136", 4, 3, 2800, .3);
         house2.setListPrice(house2.calculateAppraisalPrice() * 1.1);
         listings.addListing("42 Hitchhikers", house2);
         Condo condo1 = new Condo("4876 Industrial", "95177", 3, 1, 1800, 3);
         condo1.setListPrice(condo1.calculateAppraisalPrice() * 1.1);
         listings.addListing("4876 Industrial", condo1);
-        House house3 = new House("2654 Oak","84062", 5, 53, 4200, .5);
+        House house3 = new House("2654 Oak", "84062", 5, 53, 4200, .5);
         house3.setListPrice(house3.calculateAppraisalPrice() * 1.1);
         listings.addListing("2654 Oak", house3);
-        Condo condo2 = new Condo("9875 Lexington","84063", 2, 1, 1500, 1);
+        Condo condo2 = new Condo("9875 Lexington", "84063", 2, 1, 1500, 1);
         condo2.setListPrice(condo2.calculateAppraisalPrice() * 1.1);
         listings.addListing("9875 Lexington", condo2);
         Condo condo3 = new Condo("3782 Market", "84066", 3, 1, 1800, 2);
@@ -46,6 +50,134 @@ public class Reo {
 
         System.out.print("\nListing has been auto-populated \n ");
 
+    }
+
+    private static void createRandomBid(Listings listings) {
+        List<Residential> properties = new ArrayList<>(listings.getResidences());
+        if (properties.size() == 0) {
+            System.out.println("There are no properties to bid on.");
+            return;
+        }
+        Random r = new Random();
+        int sampleSize = Math.min(5, properties.size());
+        List<Residential> sampleProperties = new ArrayList<>();
+        for (int i = 0; i < sampleSize && !properties.isEmpty(); i++) {
+            int index = r.nextInt(properties.size());
+            Residential res = properties.get(index);
+            sampleProperties.add(res);
+            properties.remove(index);
+        }
+        String[] autoBidders = {"Patric Stewart", "Walter Koenig", "William Shatner", "Leonard Nimoy", "DeForest Kelley", "James Doohan", "George Takei", "Majel Barrett", "Nichelle Nichol", "Jonathan Frank", "Marina Sirtis", "Brent Spiner", "Gates McFadden", "Michael Dorn", "LeVar Burton", "Wil Wheaton", "Colm Meaney", "Michelle Forbes"};
+        for (Residential res : sampleProperties) {
+            double maxBid = res.calculateAppraisalPrice() * 1.1;
+            double minBid = res.calculateAppraisalPrice() * 0.9;
+            double bidAmount = minBid + (maxBid - minBid) * r.nextDouble();
+            int bidderIndex = r.nextInt(autoBidders.length);
+            String bidderName = autoBidders[bidderIndex];
+            res.newBid(bidderName, bidAmount);
+        }
+    }
+
+    private static void userPromptMakeBid(Scanner scanner, Listings listings) {
+        System.out.println("Adding bids to a property...");
+        HashMap<String, Residential> propertyMap = listings.getListings();
+        if (propertyMap == null) {
+            System.out.println("There are no properties to add bids to.");
+            return;
+        }
+
+        List<Residential> properties = new ArrayList<Residential>(propertyMap.values());
+        int propertyCount = properties.size();
+        if (propertyCount == 0) {
+            System.out.println("There are no properties to add bids to.");
+            return;
+        }
+
+        System.out.println("Choose a property to add a bid to:");
+        for (int i = 0; i < propertyCount; i++) {
+            Residential property = properties.get(i);
+            int bidCount = property.getBids().size();
+            System.out.println(i + 1 + ". " + property.getStreetAddress() + " - " + bidCount + " bids");
+        }
+
+        int selection = 0;
+        while (selection < 1 || selection > propertyCount) {
+            System.out.print("Enter a selection (1-" + propertyCount + "): ");
+            if (scanner.hasNextInt()) {
+                selection = scanner.nextInt();
+            } else {
+                scanner.nextLine();
+            }
+        }
+
+        Residential selectedProperty = properties.get(selection - 1);
+        System.out.println("\nSelected property:");
+        System.out.println(selectedProperty.toString());
+
+        scanner.nextLine();
+        System.out.print("Enter bidder name: ");
+        String bidderName = scanner.nextLine();
+
+        double bidAmount = 0;
+        boolean validBid = false;
+        while (!validBid) {
+            System.out.print("Enter bid amount: ");
+            if (scanner.hasNextDouble()) {
+                bidAmount = scanner.nextDouble();
+                validBid = true;
+            } else {
+                scanner.nextLine();
+            }
+        }
+
+        selectedProperty.newBid(bidderName, bidAmount);
+        System.out.println("Bid added to " + selectedProperty.getStreetAddress() + ".");
+    }
+
+    private static void userPromptShowBids(Scanner scanner, Listings listings) {
+        HashMap<String, Residential> propertyMap = listings.getListings();
+        if (propertyMap == null) {
+            return;
+        }
+        List<Residential> properties = new ArrayList<>(propertyMap.values());
+
+        if (properties.size() == 0) {
+            System.out.println("\nThere are no properties listed yet.\n");
+            return;
+        }
+
+        System.out.println("\nSelect a property to show bids:");
+        for (int i = 0; i < properties.size(); i++) {
+            Residential property = properties.get(i);
+            System.out.printf("%d. %s (Total Bids: %d)\n", i + 1, property.getStreetAddress(), property.getBidCount());
+        }
+
+        // Get user input for property selection
+        System.out.print("\nEnter the number of the property: ");
+        int propertyIndex = scanner.nextInt() - 1;
+        scanner.nextLine(); // Consume newline character
+
+        if (propertyIndex < 0 || propertyIndex >= properties.size()) {
+            System.out.println("\nInvalid property number. Please try again.\n");
+            return;
+        }
+
+        Residential selectedProperty = properties.get(propertyIndex);
+        System.out.printf("\n%s:\n", selectedProperty.getStreetAddress());
+        System.out.printf("Bedrooms: %d\n", selectedProperty.getBedCount());
+        System.out.printf("Bathrooms: %d\n", selectedProperty.getBathCount());
+        System.out.printf("Square Footage: %d\n", selectedProperty.getSqFootage());
+
+        System.out.println("\nBids:");
+        HashMap<String, Double> bids = selectedProperty.getBids();
+        if (bids.size() == 0) {
+            System.out.println("No bids have been placed for this property yet.");
+        } else {
+            for (String bidder : bids.keySet()) {
+                System.out.printf("%s: $%.2f\n", bidder, bids.get(bidder));
+            }
+        }
+        System.out.println();
     }
 
     private static void userPromptAddCondo(Scanner scanner) {
@@ -98,13 +230,9 @@ public class Reo {
         System.out.println("House added to listings.");
     }
 
-
-
-
     public static void main(String[] args) {
         Scanner sIn = new Scanner(System.in);
         String choice1;
-
 
         boolean done = false;
         while (!done) {
@@ -131,7 +259,7 @@ public class Reo {
                             System.out.println("\n1: Add Listing");
                             System.out.println("2: Show Listings");
                             System.out.println("3: Auto Populate Listings (DEV Tool)");
-                            System.out.print("\nWhat would you like to add to do? (1-4, Enter for done): ");
+                            System.out.print("\nWhat would you like to add to do? (1-4, Enter to go back): ");
                             String choice1_1 = sIn.nextLine();
 
                             if (choice1_1.equals("")) {
@@ -148,7 +276,7 @@ public class Reo {
                                             System.out.println("2: Add Condo");
 
                                             System.out.print(
-                                                    "\nWhat would you like to add to do? (1-2, Enter for done): ");
+                                                    "\nWhat would you like to add to do? (1-2, Enter to go back): ");
                                             String choice1_1_1 = sIn.nextLine();
 
                                             if (choice1_1_1.equals("")) {
@@ -174,7 +302,7 @@ public class Reo {
 
                                         break;
                                     case "3":
-                                            listingAutoPopulate();
+                                        listingAutoPopulate();
                                         break;
                                     default:
                                         System.out.println(
@@ -201,14 +329,16 @@ public class Reo {
                             } else {
                                 switch (choice2) {
                                     case "1":
-                                        System.out.println("2_1");
-
+                                        userPromptMakeBid(sIn, listings);
+                                        System.out.println("\nBid was recorded. \n");
                                         break;
                                     case "2":
-                                        System.out.println("2_2");
+                                        userPromptShowBids(sIn, listings);
+                                        
                                         break;
                                     case "3":
-                                        System.out.println("2_3");
+                                        createRandomBid(listings);
+                                        System.out.println("\nAuto Populate Bids was a success. \n");
                                         break;
                                     default:
                                         System.out.println(
