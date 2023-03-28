@@ -1,3 +1,13 @@
+/*
+ * Student: Leandro Cooper
+ * Teacher: Sister Barbara Chamberlin
+ * Lesson Learned: I learned how to draw with java, this draws a building
+ * Class: 115-01
+ * Date: 28-MAR-2023
+ * Assignment: 13a
+ * 
+ */
+
 package week12;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -16,7 +26,6 @@ public class Building extends LandscapeObject {
 
     @Override
     public void draw() {
-        // Draw the building
 
         int door_height = (int) (height * this.getScale() * 0.20);
         int door_width = (int) (width * this.getScale() * 0.30);

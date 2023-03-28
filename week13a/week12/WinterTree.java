@@ -1,7 +1,7 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Lesson Learned: I learned how to draw with java, this draws a Tree
+ * Lesson Learned: I learned how to draw with java, this draws a winter tree
  * Class: 115-01
  * Date: 28-MAR-2023
  * Assignment: 13a
@@ -31,7 +31,7 @@ import java.awt.Graphics2D;
  * @version 1.0
  * @since 2019-11-26
  */
-public class Tree extends LandscapeObject{
+public class WinterTree extends LandscapeObject{
 	//Attributes
 	private int levels;						//The number of levels (branch triangles) the tree will have.
 	private String trunkColor; 				// The Hex color of the trunk, including the preceding '#'. Set in the constructor.
@@ -58,7 +58,7 @@ public class Tree extends LandscapeObject{
 	 *  
 	 * @return	void
 	 */
-	public Tree(Graphics2D g2, int x, int y, double scale, int levels,  String s_trunkColor, String s_branchColor) {
+	public WinterTree(Graphics2D g2, int x, int y, double scale, int levels,  String s_trunkColor, String s_branchColor) {
 		super(g2, x, y, scale);
 		this.levels = levels;
 		this.trunkColor = "#" + s_trunkColor;
@@ -91,29 +91,7 @@ public class Tree extends LandscapeObject{
 	}//end 
 
 	private void drawBranches() {
-		BasicStroke previousStroke = (BasicStroke) g2.getStroke();
-		Color previousColor = g2.getColor();
-		g2.setStroke(treeStroke);
-		g2.setColor(Color.decode(branchColor));
-		int triangleX = currentX;
-		int triangleY = currentY - trunkHeight;
-		int triangleWidth = branchWidth;
-		int triangleHeight = branchHeight;
-	
-		for (int i = 0; i < this.levels; i++) {
-			g2.fillPolygon(new int[] { triangleX, triangleX - (triangleWidth / 2), triangleX + (triangleWidth / 2) },
-					new int[] { triangleY, triangleY + triangleHeight, triangleY + triangleHeight }, 3);
-			g2.setColor(Color.BLACK);
-			g2.drawPolygon(new int[] { triangleX, triangleX - (triangleWidth / 2), triangleX + (triangleWidth / 2) },
-					new int[] { triangleY, triangleY + triangleHeight, triangleY + triangleHeight }, 3);
-			g2.setColor(Color.decode(branchColor));
-	
-			triangleY -= (int) (branchOverlap * triangleHeight);
-	
-		}
-	
-		g2.setStroke(previousStroke);
-		g2.setColor(previousColor);
+
 	}
 	
 	

@@ -99,6 +99,13 @@ public class DrawPanel extends JPanel {
 
 		Building building1 = new Building(g2, 900, 230, 3, 25,50);
 		building1.draw();
+
+		Sun sun = new Sun(g2,100,100,3,30);
+		sun.draw();
+
+		TV tv = new TV(g2, 1000, 300, 200, 150, 1.0);
+		tv.draw();
+
 	}//end of method paintComponent(Graphics)
 
 }//end of class DrawPanel
