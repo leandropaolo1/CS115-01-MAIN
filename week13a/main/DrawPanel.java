@@ -103,9 +103,9 @@ public class DrawPanel extends JPanel {
 		Sun sun = new Sun(g2,100,100,3,30);
 		sun.draw();
 
-		TV tv = new TV(g2, 1000, 300, 200, 150, 1.0);
-		tv.draw();
 
-	}//end of method paintComponent(Graphics)
+		House house = new House(g2, 1000, 300, 3.0, 150, 100);
+		house.draw();
+	}
 
 }//end of class DrawPanel
