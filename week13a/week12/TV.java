@@ -57,7 +57,7 @@ public class TV extends LandscapeObject {
         BasicStroke previousStroke = (BasicStroke) g2.getStroke();
         Color previousColor = g2.getColor();
         g2.setStroke(new BasicStroke((float) (4 * super.getScale())));
-        g2.setColor(Color.DARK_GRAY);
+        g2.setColor(Color.WHITE);
         int standWidth = (int) (width * 0.5);
         int standHeight = (int) (height * 0.15);
         int standX = currentX + ((width - standWidth) / 2);
