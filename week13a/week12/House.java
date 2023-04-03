@@ -1,7 +1,7 @@
 /*
  * Student: Leandro Cooper
  * Teacher: Sister Barbara Chamberlin
- * Lesson Learned: I learned how to draw with java, this draws a building
+ * Lesson Learned: I learned how to draw with java, this draws a house
  * Class: 115-01
  * Date: 28-MAR-2023
  * Assignment: 13a
