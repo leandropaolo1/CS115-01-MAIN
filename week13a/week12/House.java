@@ -26,28 +26,28 @@ public class House extends LandscapeObject {
 
     @Override
     public void draw() {
-		g2.setColor(Color.RED);
-		int triangleX = currentX;
-		int triangleY = currentY - this.height;
-		int triangleWidth = this.width;
-		int triangleHeight = this.height;
-        int door_height = (int) (height * this.getScale() * 0.20);
-        int door_width = (int) (width * this.getScale() * 0.30);
-
         g2.setColor(Color.GRAY);
-        g2.fillRect(currentX, currentY, (int) (width * this.getScale()), (int) (height * this.getScale()));
-        
-        g2.setColor(Color.white);
-        g2.fillRect(
-            currentX + (int) (this.getScale() * 9), currentY + (int) (this.height * this.getScale() - door_height), door_width, door_height);
-        // Draw the windows
+        g2.fillRect(currentX, currentY, width, height);
+
+        // Draw the roof
+        int[] xPoints = { currentX - 10, currentX + width / 2, currentX + width + 10 };
+        int[] yPoints = { currentY + height, currentY - 10, currentY + height };
+        g2.setColor(Color.RED);
+        g2.fillPolygon(xPoints, yPoints, 3);
+
+        // Draw the door
+        int doorHeight = height / 2;
+        int doorWidth = doorHeight / 2;
         g2.setColor(Color.WHITE);
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 5; j++) {
-                Rectangle window = new Rectangle(currentX + (int) (width * this.getScale() * 0.17) + j * (int) (width * this.getScale() * 0.15),
-                        currentY + (int) (height * this.getScale() * 0.1) + i * (int) (height * this.getScale() * 0.2),
-                        (int) (width * this.getScale() * 0.1), (int) (height * this.getScale() * 0.1));
-                g2.fill(window);
+        g2.fillRect(currentX + width / 2 - doorWidth / 2, currentY + height - doorHeight, doorWidth, doorHeight);
+
+        // Draw the windows
+        int windowWidth = width / 5;
+        int windowHeight = height / 3;
+        g2.setColor(Color.WHITE);
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                g2.fillRect(currentX + width / 4 + j * windowWidth, currentY + height / 4 + i * windowHeight, windowWidth, windowHeight);
             }
         }
     }
