@@ -38,16 +38,16 @@ public class House extends LandscapeObject {
         // Draw the door
         int doorHeight = height / 2;
         int doorWidth = doorHeight / 2;
-        g2.setColor(Color.WHITE);
-        g2.fillRect(currentX + width / 2 - doorWidth / 2, currentY + height - doorHeight, doorWidth, doorHeight);
+        g2.setColor(Color.black);
+        g2.fillRect(currentX + width / 2 - doorWidth / 2, currentY + height - doorHeight+100, doorWidth, doorHeight);
 
         // Draw the windows
-        int windowWidth = width / 5;
-        int windowHeight = height / 3;
+        int windowWidth = width / 10;
+        int windowHeight = height / 6;
         g2.setColor(Color.WHITE);
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
-                g2.fillRect(currentX + width / 4 + j * windowWidth, currentY + height / 4 + i * windowHeight, windowWidth, windowHeight);
+                g2.fillRect(currentX + width / 4 + j * windowWidth+20, currentY + height / 4 + i * windowHeight +30, windowWidth, windowHeight);
             }
         }
     }
