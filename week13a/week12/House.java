@@ -27,7 +27,7 @@ public class House extends LandscapeObject {
     @Override
     public void draw() {
         g2.setColor(Color.GRAY);
-        g2.fillRect(currentX, currentY, width, height);
+        g2.fillRect(currentX, currentY+100, width, height);
 
         // Draw the roof
         int[] xPoints = { currentX - 10, currentX + width / 2, currentX + width + 10 };
